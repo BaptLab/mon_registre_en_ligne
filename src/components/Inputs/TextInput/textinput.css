@@ -1,0 +1,7 @@
+.label-and-tooltip-section {
+  position: relative;
+}
+
+label {
+  margin-right: 10px;
+}

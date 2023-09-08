@@ -5,3 +5,12 @@
 .hide {
   display: none;
 }
+
+.tooltip-container {
+  background-color: lightgray;
+  padding: 10px;
+  width: 500px;
+  position: absolute;
+  top: 0px;
+  left: 170px;
+}
