@@ -1,0 +1,20 @@
+.label-and-tooltip-section {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.input-label {
+  width: 190px;
+}
+
+.input {
+  width: 240px;
+}
+
+.input-container {
+  margin-bottom: 30px;
+  width: 250px;
+}

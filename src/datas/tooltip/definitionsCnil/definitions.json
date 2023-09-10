@@ -1,0 +1,28 @@
+{
+  "traitement": {
+    "definition": "Un traitement de données personnelles est une opération, ou ensemble d’opérations, portant sur des données personnelles, quel que soit le procédé utilisé (collecte, enregistrement, organisation, conservation, adaptation, modification, extraction, consultation, utilisation, communication par transmission ou diffusion ou toute autre forme de mise à disposition, rapprochement). Un traitement de données personnelles n’est pas nécessairement informatisé : les fichiers papier sont également concernés et doivent être protégés dans les mêmes conditions. Un traitement de données doit avoir un objectif, une finalité déterminée préalablement au recueil des données et à leur exploitation.",
+    "examples": "Exemples de traitements : tenue du registre des sous-traitants, gestion des paies, gestion des ressources humaines, etc.",
+    "simplifiedTerms": "Termes simplifiés à privilégier : utilisation de données, système informatique, système d'information (selon le cas)."
+  },
+  "RT": {
+    "definition": "Le responsable d'un traitement de données à caractère personnel est en principe la personne, l'autorité publique, la société ou l'organisme qui détermine les finalités et les moyens de ce fichier, qui décide de sa création. En pratique, il s'agit généralement de la personne morale (entreprise, collectivité, etc.) incarnée par son représentant légal (président, maire, etc.). C'est lui qui doit accomplir, lorsque cela est encore obligatoire comme, par exemple, dans le domaine de la santé, les formalités déclaratives auprès de la CNIL."
+  },
+  "DPO": {
+    "definition": "Le délégué à la protection des données (DPO) est chargé de mettre en œuvre la conformité au règlement européen sur la protection des données au sein de l’organisme qui l’a désigné s’agissant de l’ensemble des traitements mis en œuvre par cet organisme. Sa désignation est obligatoire dans certains cas. Un délégué, interne ou externe, peut être désigné pour plusieurs organismes sous conditions. Pour garantir l’effectivité de ses missions, le délégué doit disposer de qualités professionnelles et de connaissances spécifiques et doit bénéficier de moyens matériels et organisationnels, des ressources et du positionnement adéquats."
+  },
+  "RRT": {
+    "definition": "à trouver"
+  },
+  "Co-RT": {
+    "definition": "à trouver"
+  },
+  "ST": {
+    "definition": "Le sous-traitant est la personne physique ou morale (entreprise ou organisme public) qui traite des données pour le compte d’un autre organisme (« le responsable de traitement »), dans le cadre d’un service ou d’une prestation. Les sous-traitants ont des obligations concernant les données personnelles, qui doivent être présentes dans le contrat : une obligation de transparence et de traçabilité ; la prise en compte des principes de protection des données dès la conception et par défaut ;    une obligation de garantir la sécurité des données traitées ; une obligation d’assistance, d’alerte et de conseil (par exemple, une procédure de notification des violations de données personnelles doit être notifiée)."
+  },
+  "finalité": {
+    "definition": "La finalité du traitement est l’objectif principal de l’utilisation de données personnelles. Les données sont collectées pour un but bien déterminé et légitime et ne sont pas traitées ultérieurement de façon incompatible avec cet objectif initial. Ce principe de finalité limite la manière dont le responsable de traitement peut utiliser ou réutiliser ces données dans le futur.",
+    "examples": "Exemples de finalité : gestion des recrutements, gestion des paies, gestion des clients, enquête de satisfaction, surveillance des locaux, etc.",
+    "simplifiedTerms": "Termes simplifiés à privilégier : objectif, objet, raison, etc."
+  },
+  "PC": "Toute personne physique identifiée ou identifiable dont les données à caractère personnel la concernant font l'objet d'un traitement."
+}

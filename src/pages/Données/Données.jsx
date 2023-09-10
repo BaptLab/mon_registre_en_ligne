@@ -1,0 +1,343 @@
+import "./données.css";
+import Header from "../../layout/header/Header";
+import SideNav from "../../layout/SideNav/SideNav";
+import Input from "../../components/Inputs/Input";
+import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
+import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
+import definitions from "../../datas/tooltip/definitionsCnil/definitions.json";
+import { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+
+const Données = () => {
+  const checkboxValues = useSelector((state) => state.dataCheckbox);
+  console.log(checkboxValues);
+
+  // Define state variables for other input sections
+  const [civData, setCivData] = useState(1);
+  const [viePersoDataCount, setViePersoDataCount] = useState(1);
+  const [ecoDataCount, setEcoDataCount] = useState(1);
+  const [connexionDataCount, setConnexionDataCount] = useState(1);
+  const [localisationDataCount, setLocalisationDataCount] = useState(1);
+  const [NIRDataCount, setNIRDataCount] = useState(1);
+
+  // Define functions to add and delete data fields for other input sections
+  const addCivData = () => {
+    setCivData(civData + 1);
+  };
+
+  const deleteCivData = () => {
+    setCivData(civData - 1);
+  };
+
+  const addViePersoData = () => {
+    setViePersoDataCount(viePersoDataCount + 1);
+  };
+
+  const deleteViePersoData = () => {
+    setViePersoDataCount(Math.max(1, viePersoDataCount - 1));
+  };
+
+  const addEcoData = () => {
+    setEcoDataCount(ecoDataCount + 1);
+  };
+
+  const deleteEcoData = () => {
+    setEcoDataCount(Math.max(1, ecoDataCount - 1));
+  };
+
+  const addConnexionData = () => {
+    setConnexionDataCount(connexionDataCount + 1);
+  };
+
+  const deleteConnexionData = () => {
+    setConnexionDataCount(Math.max(1, connexionDataCount - 1));
+  };
+
+  const addLocalisationData = () => {
+    setLocalisationDataCount(localisationDataCount + 1);
+  };
+
+  const deleteLocalisationData = () => {
+    setLocalisationDataCount(Math.max(1, localisationDataCount - 1));
+  };
+
+  const addNIRData = () => {
+    setNIRDataCount(NIRDataCount + 1);
+  };
+
+  const deleteNIRData = () => {
+    setNIRDataCount(Math.max(1, NIRDataCount - 1));
+  };
+
+  const [ethData, setethDataCount] = useState(1);
+  const [politicData, setPoliticDataCount] = useState(1);
+  const [religiousData, setReligiousDataCount] = useState(1);
+  const [syndicalData, setSyndicalDataCount] = useState(1);
+  const [biometricData, setBiometricDataCount] = useState(1);
+  const [healthData, setHealthDataCount] = useState(1);
+  const [sexualData, setSexualDataCount] = useState(1);
+  const [convictionData, setConvictionDataCount] = useState(1);
+
+  const addEthData = () => {
+    setethDataCount(ethData + 1);
+  };
+
+  const deleteEthData = () => {
+    setethDataCount(Math.max(1, ethData - 1));
+  };
+  const addPoliticData = () => {
+    setPoliticDataCount(politicData + 1);
+  };
+
+  const deletePoliticData = () => {
+    setPoliticDataCount(Math.max(1, politicData - 1));
+  };
+
+  const addReligiousData = () => {
+    setReligiousDataCount(religiousData + 1);
+  };
+
+  const deleteReligiousData = () => {
+    setReligiousDataCount(Math.max(1, religiousData - 1));
+  };
+
+  const addSyndicalData = () => {
+    setSyndicalDataCount(syndicalData + 1);
+  };
+
+  const deleteSyndicalData = () => {
+    setSyndicalDataCount(Math.max(1, syndicalData - 1));
+  };
+
+  const addHealthData = () => {
+    setHealthDataCount(healthData + 1);
+  };
+
+  const deleteHealthData = () => {
+    setHealthDataCount(Math.max(1, healthData - 1));
+  };
+
+  const addBiometricData = () => {
+    setBiometricDataCount(biometricData + 1);
+  };
+
+  const deleteBiometricData = () => {
+    setBiometricDataCount(Math.max(1, biometricData - 1));
+  };
+
+  const addSexualData = () => {
+    setSexualDataCount(sexualData + 1);
+  };
+
+  const deleteSexualData = () => {
+    setSexualDataCount(Math.max(1, sexualData - 1));
+  };
+
+  const addConvictionData = () => {
+    setConvictionDataCount(convictionData + 1);
+  };
+
+  const deleteConvictionData = () => {
+    setConvictionDataCount(Math.max(1, convictionData - 1));
+  };
+
+  return (
+    <>
+      <Header />
+      <main>
+        <SideNav />
+        <div id="form-container">
+          <section id="data-form" className="form">
+            <h2 id="data-title" className="page-title">
+              Données personnelles traitées
+            </h2>
+            <div className="data-input-section">
+              <Input
+                label="Etat civil, identité, données d'identitifaction, images, etc."
+                id="civData"
+                type="checkbox"
+              />
+              {checkboxValues.civData && (
+                <>
+                  {Array.from({ length: civData }).map((_, index) => (
+                    <Input key={index} placeholder={`Numéro de téléphone`} />
+                  ))}
+                  <AnotherBtn addAnElement={addCivData} text="+" />
+                  <DeleteBtn deleteAnElement={deleteCivData} text="-" />
+                </>
+              )}
+            </div>
+            <Input label="Vie personnelle" id="viePersoData" type="checkbox" />
+            {checkboxValues.viePersoData && (
+              <>
+                {Array.from({ length: viePersoDataCount }).map((_, index) => (
+                  <Input key={index} placeholder={`Some placeholder`} />
+                ))}
+                <AnotherBtn addAnElement={addViePersoData} text="+" />
+                <DeleteBtn deleteAnElement={deleteViePersoData} text="-" />
+              </>
+            )}
+            <Input
+              label="Informations d'ordre économique et financier"
+              id="ecoData"
+              type="checkbox"
+            />
+            {checkboxValues.ecoData && (
+              <>
+                {Array.from({ length: ecoDataCount }).map((_, index) => (
+                  <Input key={index} placeholder={`Some placeholder`} />
+                ))}
+                <AnotherBtn addAnElement={addEcoData} text="+" />
+                <DeleteBtn deleteAnElement={deleteEcoData} text="-" />
+              </>
+            )}
+            <Input label="Données de connexion" id="connexionData" type="checkbox" />
+            {checkboxValues.connexionData && (
+              <>
+                {Array.from({ length: connexionDataCount }).map((_, index) => (
+                  <Input key={index} placeholder={`Some placeholder`} />
+                ))}
+                <AnotherBtn addAnElement={addConnexionData} text="+" />
+                <DeleteBtn deleteAnElement={deleteConnexionData} text="-" />
+              </>
+            )}
+            <Input
+              label="Données de localisation"
+              id="localisationData"
+              type="checkbox"
+            />
+            {checkboxValues.localisationData && (
+              <>
+                {Array.from({ length: localisationDataCount }).map((_, index) => (
+                  <Input key={index} placeholder={`Some placeholder`} />
+                ))}
+                <AnotherBtn addAnElement={addLocalisationData} text="+" />
+                <DeleteBtn deleteAnElement={deleteLocalisationData} text="-" />
+              </>
+            )}
+            <Input label="Numéro de Sécurité Sociale" id="NIRData" type="checkbox" />
+            {checkboxValues.NIRData && (
+              <>
+                {Array.from({ length: NIRDataCount }).map((_, index) => (
+                  <Input key={index} placeholder={`Some placeholder`} />
+                ))}
+                <AnotherBtn addAnElement={addNIRData} text="+" />
+                <DeleteBtn deleteAnElement={deleteNIRData} text="-" />
+              </>
+            )}
+            <h3 id="data-subtitle" className="page-subtitle">
+              Données personnelles sensibles
+            </h3>
+            <div className="data-input-section">
+              <Input
+                label="Données révélant l'origine raciale ou ethnique"
+                id="ethData"
+                type="checkbox"
+              />
+              {checkboxValues.ethData && (
+                <>
+                  {Array.from({ length: ethData }).map((_, index) => (
+                    <Input key={index} />
+                  ))}
+                  <AnotherBtn addAnElement={addEthData} text="+" />
+                  <DeleteBtn deleteAnElement={deleteEthData} text="-" />
+                </>
+              )}
+            </div>
+            <div className="data-input-section">
+              <Input label="Données politiques" id="politicData" type="checkbox" />
+              {checkboxValues.politicData && (
+                <>
+                  {Array.from({ length: politicData }).map((_, index) => (
+                    <Input key={index} placeholder={`Some placeholder`} />
+                  ))}
+                  <AnotherBtn addAnElement={addPoliticData} text="+" />
+                  <DeleteBtn deleteAnElement={deletePoliticData} text="-" />
+                </>
+              )}
+            </div>
+            <div className="data-input-section">
+              <Input label="Données religieuses" id="religiousData" type="checkbox" />
+              {checkboxValues.religiousData && (
+                <>
+                  {Array.from({ length: religiousData }).map((_, index) => (
+                    <Input key={index} placeholder={`Some placeholder`} />
+                  ))}
+                  <AnotherBtn addAnElement={addReligiousData} text="+" />
+                  <DeleteBtn deleteAnElement={deleteReligiousData} text="-" />
+                </>
+              )}
+            </div>
+            <div className="data-input-section">
+              <Input label="Données syndicales" id="syndicalData" type="checkbox" />
+              {checkboxValues.syndicalData && (
+                <>
+                  {Array.from({ length: syndicalData }).map((_, index) => (
+                    <Input key={index} placeholder={`Some placeholder`} />
+                  ))}
+                  <AnotherBtn addAnElement={addSyndicalData} text="+" />
+                  <DeleteBtn deleteAnElement={deleteSyndicalData} text="-" />
+                </>
+              )}
+            </div>
+            <div className="data-input-section">
+              <Input label="Données biométriques" id="biometricData" type="checkbox" />
+              {checkboxValues.biometricData && (
+                <>
+                  {Array.from({ length: biometricData }).map((_, index) => (
+                    <Input key={index} placeholder={`Some placeholder`} />
+                  ))}
+                  <AnotherBtn addAnElement={addBiometricData} text="+" />
+                  <DeleteBtn deleteAnElement={deleteBiometricData} text="-" />
+                </>
+              )}
+            </div>
+            <div className="data-input-section">
+              <Input label="Données de santé" id="healthData" type="checkbox" />
+              {checkboxValues.healthData && (
+                <>
+                  {Array.from({ length: healthData }).map((_, index) => (
+                    <Input key={index} placeholder={`Some placeholder`} />
+                  ))}
+                  <AnotherBtn addAnElement={addHealthData} text="+" />
+                  <DeleteBtn deleteAnElement={deleteHealthData} text="-" />
+                </>
+              )}
+            </div>
+            <div className="data-input-section">
+              <Input label="Données à caractère sexuel" id="sexualData" type="checkbox" />
+              {checkboxValues.sexualData && (
+                <>
+                  {Array.from({ length: sexualData }).map((_, index) => (
+                    <Input key={index} placeholder={`Some placeholder`} />
+                  ))}
+                  <AnotherBtn addAnElement={addSexualData} text="+" />
+                  <DeleteBtn deleteAnElement={deleteSexualData} text="-" />
+                </>
+              )}
+            </div>
+            <div className="data-input-section">
+              <Input
+                label="Données de condamnation pénale"
+                id="convictionData"
+                type="checkbox"
+              />
+              {checkboxValues.convictionData && (
+                <>
+                  {Array.from({ length: convictionData }).map((_, index) => (
+                    <Input key={index} placeholder={`Some placeholder`} />
+                  ))}
+                  <AnotherBtn addAnElement={addConvictionData} text="+" />
+                  <DeleteBtn deleteAnElement={deleteConvictionData} text="-" />
+                </>
+              )}
+            </div>
+          </section>
+        </div>
+      </main>
+    </>
+  );
+};
+
+export default Données;

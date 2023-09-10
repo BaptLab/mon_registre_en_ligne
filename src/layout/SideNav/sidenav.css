@@ -5,3 +5,12 @@ nav {
 .section-redirection-container {
   margin-right: 20px;
 }
+
+.section-redirection {
+  cursor: pointer;
+}
+
+.section-redirection:hover {
+  font-size: 1.2em;
+  font-weight: bold;
+}
