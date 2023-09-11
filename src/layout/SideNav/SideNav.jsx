@@ -53,10 +53,22 @@ const SideNav = () => {
         >
           Catégories de données traitées
         </li>
-        <li className="section-redirection">Destinataire des données</li>
-        <li className="section-redirection">Transferts de données</li>
-        <li className="section-redirection">Conservation des données</li>
-        <li className="section-redirection">Sécurité des données</li>
+        <li
+          onClick={() => {
+            handleRedirection("/Destinataires");
+          }}
+          className="section-redirection"
+        >
+          Destinataire des données
+        </li>
+        <li
+          onClick={() => {
+            handleRedirection("/Sécurité");
+          }}
+          className="section-redirection"
+        >
+          Sécurité des données
+        </li>
       </ul>
     </nav>
   );

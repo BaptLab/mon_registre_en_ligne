@@ -8,6 +8,7 @@ import TooltipContainer from "../Tooltip/TooltipContainer/TooltipContainer";
 import TooltipContent from "../Tooltip/TooltipContent/TooltipContent";
 
 import "./input.css";
+import { updateValue } from "../../redux/slices/formDataSlice";
 
 const Input = (props) => {
   const dispatch = useDispatch();
@@ -23,6 +24,12 @@ const Input = (props) => {
 
   const handleInputValue = (e) => {
     dispatch(switchValue({ id: `${props.id}` }));
+    dispatch(
+      updateValue({
+        id: props.id,
+        value: e.target.value, // Include e.target.value in the payload
+      })
+    );
   };
 
   return (

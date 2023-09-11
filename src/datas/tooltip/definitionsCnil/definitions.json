@@ -24,5 +24,13 @@
     "examples": "Exemples de finalité : gestion des recrutements, gestion des paies, gestion des clients, enquête de satisfaction, surveillance des locaux, etc.",
     "simplifiedTerms": "Termes simplifiés à privilégier : objectif, objet, raison, etc."
   },
-  "PC": "Toute personne physique identifiée ou identifiable dont les données à caractère personnel la concernant font l'objet d'un traitement."
+  "PC": {
+    "definition": "Toute personne physique identifiée ou identifiable dont les données à caractère personnel la concernant font l'objet d'un traitement."
+  },
+  "destinataire": {
+    "definition": "Personne habilitée à obtenir communication de données enregistrées dans un fichier ou un traitement en raison de ses fonctions."
+  },
+  "security": {
+    "definition": "Les mesures de sécurité, c'est quoi ?  Les responsables d'un fichier et les sous-traitants doivent prendre toutes les mesures nécessaires pour assurer la sécurité et la confidentialité des données personnelles qu'ils traitent :    Des mesures de sécurité physiques : sécurité des accès aux locaux ;    Des mesures de sécurité informatiques : antivirus, sécurisation des mots de passe, etc. Ils doivent également veiller à ce que seuls les destinataires autorisés puissent accéder aux données."
+  }
 }

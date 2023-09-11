@@ -27,7 +27,7 @@ const Données = () => {
   };
 
   const deleteCivData = () => {
-    setCivData(civData - 1);
+    setCivData(Math.max(1, civData - 1));
   };
 
   const addViePersoData = () => {
@@ -152,7 +152,7 @@ const Données = () => {
             <h2 id="data-title" className="page-title">
               Données personnelles traitées
             </h2>
-            <div className="data-input-section">
+            <div className="data-input-section ">
               <Input
                 label="Etat civil, identité, données d'identitifaction, images, etc."
                 id="civData"

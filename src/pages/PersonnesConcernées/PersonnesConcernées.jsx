@@ -14,7 +14,7 @@ const PersonnesConcernées = () => {
   };
 
   const deleteaPCcategory = () => {
-    setPCcategoryCount(PCcategoryCount - 1);
+    setPCcategoryCount(Math.max(1, PCcategoryCount - 1));
   };
 
   return (
@@ -28,20 +28,25 @@ const PersonnesConcernées = () => {
               Personnes concernées par le traitement
             </h2>
             {Array.from({ length: PCcategoryCount }).map((_, index) => (
-              <div className="PCcategory-container">
-                <Input
-                  key={index}
-                  label={`Catégorie de personne ${index + 1}`}
-                  placeholder={`Clients, patients...`}
-                  id={`PCcategory-${index + 1}`}
-                  tooltipContent={definitions.PC}
-                />
-                <Input
-                  key={index}
-                  label={`Précisions sur la catégorie de personne ${index + 1}`}
-                  placeholder={`Clients faisant l'objet d'un dérogation d'ordre médical...`}
-                  id={`PCcategory-precisions-${index + 1}`}
-                />
+              <div className="catégorieDePersonnes-global-container ">
+                <h3 className="transfer-title inputs-title">
+                  Personne concernée {index + 1}
+                </h3>
+                <div className="PCcategory-container global-input-container">
+                  <Input
+                    key={index}
+                    label={`Catégorie de personne`}
+                    placeholder={`Clients, patients...`}
+                    id={`PCcategory-${index + 1}`}
+                    tooltipContent={definitions.PC}
+                  />
+                  <Input
+                    key={index}
+                    label={`Précisions sur la catégorie de personne`}
+                    placeholder={`Clients faisant l'objet d'un dérogation d'ordre médical...`}
+                    id={`PCcategory-precisions-${index + 1}`}
+                  />
+                </div>
               </div>
             ))}
             <AnotherBtn

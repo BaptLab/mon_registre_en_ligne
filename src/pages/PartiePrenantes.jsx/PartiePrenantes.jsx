@@ -26,21 +26,21 @@ const PartiePrenantes = () => {
             <Input
               label="Délégué à la protection des données personnelles (DPO)"
               placeholder="Jean Dupont (responsable informatique)"
-              id="DPOname"
+              id="DPOName"
               type="text"
               tooltipContent={data.DPO}
             />
             <Input
               label="Représentant du responsable du traitement"
               placeholder="Jeanne Smith (responsable juridique)"
-              id="RRTname"
+              id="RRTName"
               type="text"
               tooltipContent={data.RRT}
             />
             <Input
               label="Corresponsable de traitement"
               placeholder="Henry Niel (Directeur général de Lesbouchons.com)"
-              id="Co-RTname"
+              id="CoRTName"
               type="text"
               tooltipContent={data["Co-RT"]}
             />

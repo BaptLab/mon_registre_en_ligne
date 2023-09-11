@@ -27,21 +27,23 @@ const Finalités = () => {
           <h2 id="finalités-title" className="page-title">
             Finalités des données traitées
           </h2>
-          <Input
-            label="Finalité principale"
-            placeholder="Gestion de la paie"
-            id="finalitéPrincipale"
-            type="text"
-            tooltipContent={definitions.finalité}
-          />
-          {Array.from({ length: finalitéCount }).map((_, index) => (
+          <div className="finalité-global-container ">
             <Input
-              key={index}
-              label={`Sous-finalité ${index + 1}`} // Label it as needed
-              placeholder={`Calcul des rémunérations`} // Placeholder it as needed
-              id={`sousFinalité-${index + 1}`} // Unique ID for each input
+              label="Finalité principale"
+              placeholder="Gestion de la paie"
+              id="finalitéPrincipale"
+              type="text"
+              tooltipContent={definitions.finalité}
             />
-          ))}
+            {Array.from({ length: finalitéCount }).map((_, index) => (
+              <Input
+                key={index}
+                label={`Sous-finalité ${index + 1}`} // Label it as needed
+                placeholder={`Calcul des rémunérations`} // Placeholder it as needed
+                id={`sousFinalité${index + 1}`} // Unique ID for each input
+              />
+            ))}
+          </div>
           <AnotherBtn addAnElement={addAFinalité} text="Ajouter une sous-finalité" />
           <DeleteBtn
             deleteAnElement={deleteAFinalité}

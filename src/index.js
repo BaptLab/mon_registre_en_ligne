@@ -9,6 +9,8 @@ import PersonnesConcernées from "./pages/PersonnesConcernées/PersonnesConcern�
 import Données from "./pages/Données/Données";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
+import Destinataires from "./pages/Destinataires/Destinataires";
+import Sécurité from "./pages/Sécurité/Sécurité";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +23,8 @@ root.render(
           <Route path="/Finalités" element={<Finalités />} />
           <Route path="/Données" element={<Données />} />
           <Route path="/PersonnesConcernées" element={<PersonnesConcernées />} />
+          <Route path="/Destinataires" element={<Destinataires />} />
+          <Route path="/Sécurité" element={<Sécurité />} />
         </Routes>
       </Router>
     </Provider>

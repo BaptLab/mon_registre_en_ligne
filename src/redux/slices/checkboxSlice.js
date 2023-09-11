@@ -7,6 +7,7 @@ const initialState = {
   connexionData: false,
   localisationData: false,
   NIRData: false,
+  transferData: false,
 };
 
 export const checkboxSlice = createSlice({
@@ -16,7 +17,7 @@ export const checkboxSlice = createSlice({
     switchValue: (state, action) => {
       const inputId = action.payload.id;
       state[inputId] = !state[inputId];
-      console.log(state[inputId]);
+      console.log(inputId, state[inputId]);
     },
   },
 });

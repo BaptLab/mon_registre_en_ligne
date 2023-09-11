@@ -6,6 +6,7 @@ import data from "../../datas/tooltip/definitionsCnil/definitions.json";
 import Input from "../../components/Inputs/Input";
 
 import "./introduction.css";
+import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -19,6 +20,10 @@ const Introduction = () => {
     }, 300); // Delay in milliseconds
   }, []);
  */
+
+  const formData = useSelector((state) => state.formData);
+  console.log("formData : ", formData);
+
   return (
     <>
       <Header />
