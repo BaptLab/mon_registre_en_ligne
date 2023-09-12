@@ -22,7 +22,7 @@ const Finalités = () => {
     <>
       <Header />
       <main>
-        <SideNav />
+        <SideNav selected="finalités" />
         <div id="form-container" className="form">
           <h2 id="finalités-title" className="page-title">
             Finalités des données traitées

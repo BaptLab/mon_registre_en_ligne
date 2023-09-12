@@ -10,7 +10,7 @@ const PartiePrenantes = () => {
     <>
       <Header />
       <main>
-        <SideNav />
+        <SideNav selected="partiesprenantes" />
         <div id="form-container">
           <section id="partiesPrenantes-form" className="form">
             <h2 id="partiesPrenantes-title" className="page-title">

@@ -3,7 +3,7 @@ import "./sidenav.css";
 import { useNavigate } from "react-router-dom";
 import "./sidenav.css";
 
-const SideNav = () => {
+const SideNav = (props) => {
   const navigate = useNavigate();
 
   let handleRedirection = (url) => {
@@ -17,7 +17,9 @@ const SideNav = () => {
           onClick={() => {
             handleRedirection("/Introduction");
           }}
-          className="section-redirection"
+          className={`section-redirection ${
+            props.selected === "introduction" ? "sidenav-selected" : ""
+          }`}
         >
           Introduction
         </li>
@@ -25,7 +27,9 @@ const SideNav = () => {
           onClick={() => {
             handleRedirection("/PartiePrenantes");
           }}
-          className="section-redirection"
+          className={`section-redirection ${
+            props.selected === "partiesprenantes" ? "sidenav-selected" : ""
+          }`}
         >
           Parties prenantes
         </li>
@@ -33,7 +37,9 @@ const SideNav = () => {
           onClick={() => {
             handleRedirection("/Finalités");
           }}
-          className="section-redirection"
+          className={`section-redirection ${
+            props.selected === "finalités" ? "sidenav-selected" : ""
+          }`}
         >
           Finalités des données traitées
         </li>
@@ -41,7 +47,9 @@ const SideNav = () => {
           onClick={() => {
             handleRedirection("/PersonnesConcernées");
           }}
-          className="section-redirection"
+          className={`section-redirection ${
+            props.selected === "pc" ? "sidenav-selected" : ""
+          }`}
         >
           Personnes concernées par le traitement
         </li>
@@ -49,7 +57,9 @@ const SideNav = () => {
           onClick={() => {
             handleRedirection("/Données");
           }}
-          className="section-redirection"
+          className={`section-redirection ${
+            props.selected === "données" ? "sidenav-selected" : ""
+          }`}
         >
           Catégories de données traitées
         </li>
@@ -57,15 +67,29 @@ const SideNav = () => {
           onClick={() => {
             handleRedirection("/Destinataires");
           }}
-          className="section-redirection"
+          className={`section-redirection ${
+            props.selected === "destinataires" ? "sidenav-selected" : ""
+          }`}
         >
           Destinataire des données
         </li>
         <li
           onClick={() => {
+            handleRedirection("/BaseLégale");
+          }}
+          className={`section-redirection ${
+            props.selected === "baselégale" ? "sidenav-selected" : ""
+          }`}
+        >
+          Base Légale
+        </li>
+        <li
+          onClick={() => {
             handleRedirection("/Sécurité");
           }}
-          className="section-redirection"
+          className={`section-redirection ${
+            props.selected === "sécurité" ? "sidenav-selected" : ""
+          }`}
         >
           Sécurité des données
         </li>

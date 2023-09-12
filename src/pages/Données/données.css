@@ -1,0 +1,9 @@
+.data-input-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.label-and-input-section {
+  display: flex;
+  flex-direction: column;
+}

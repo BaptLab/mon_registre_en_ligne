@@ -28,7 +28,7 @@ const Introduction = () => {
     <>
       <Header />
       <main>
-        <SideNav />
+        <SideNav selected="introduction" />
         <section
           id="introduction-form"
           className="form"
@@ -53,9 +53,9 @@ const Introduction = () => {
             />
             <Input
               label="Précision(s) sur la date de création du traitement"
-              placeholder="A voir"
+              placeholder="à compter du lancement du logiciel x"
               id="traitmentCreationDatePrecision"
-              type="Date"
+              type="text"
               tooltipContent={creationDatePrecision}
             />
           </div>

@@ -34,7 +34,7 @@ const Destinataires = () => {
     <>
       <Header />
       <main>
-        <SideNav />
+        <SideNav selected="destinataires" />
         <div id="form-container">
           <section id="destinataires-form" className="form">
             <h2 id="destinataires-title" className="page-title">
@@ -42,7 +42,7 @@ const Destinataires = () => {
             </h2>
             {Array.from({ length: destinataireTypeCount }).map((_, index) => (
               <div className="transfert-global-container">
-                <h3 className="transfer-title">Destinataire {index + 1}</h3>
+                <h3 className="transfer-title inputs-title">Destinataire {index + 1}</h3>
                 <div className="destinataires-container global-input-container">
                   <Input
                     key={index}
@@ -84,18 +84,26 @@ const Destinataires = () => {
                       <Input
                         key={index}
                         placeholder={`Banque d'Andorre`}
-                        label="Destinataire "
+                        label="Destinataire"
+                        id={`horsUEDestinataire${index + 1}`}
                       />
-                      <Input key={index} placeholder={`Andorre`} label="Pays " />
+                      <Input
+                        key={index}
+                        placeholder={`Andorre`}
+                        label="Pays"
+                        id={`horsUEPays${index + 1}`}
+                      />
                       <Input
                         key={index}
                         placeholder={`Clauses contractuelles types (CCT)`}
-                        label="Type de garanties "
+                        label="Type de garanties"
+                        id={`horsUEGuaranties${index + 1}`}
                       />
                       <Input
                         key={index}
                         placeholder={`Contrat en date du 23/01/2018`}
-                        label="Liens vers la documentation "
+                        label="Liens vers la documentation"
+                        id={`horsUEDocumentationLink${index + 1}`}
                       />
                     </div>
                   </div>

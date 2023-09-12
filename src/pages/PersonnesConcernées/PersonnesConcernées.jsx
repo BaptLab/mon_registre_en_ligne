@@ -21,7 +21,7 @@ const PersonnesConcernées = () => {
     <>
       <Header />
       <main>
-        <SideNav />
+        <SideNav selected="pc" />
         <div id="form-container">
           <section id="catégorieDePersonnes-form" className="form">
             <h2 id="catégorieDePersonnes-title" className="page-title">

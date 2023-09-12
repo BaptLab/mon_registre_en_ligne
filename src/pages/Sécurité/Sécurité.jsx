@@ -21,7 +21,7 @@ const Sécurité = () => {
     <>
       <Header />
       <main>
-        <SideNav />
+        <SideNav selected="sécurité" />
         <div id="form-container">
           <section id="security-form" className="form">
             <h2 id="security-title" className="page-title">

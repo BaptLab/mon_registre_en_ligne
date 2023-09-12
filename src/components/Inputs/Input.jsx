@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { switchValue } from "../../redux/slices/checkboxSlice";
 
@@ -22,14 +22,43 @@ const Input = (props) => {
     setTooltipVisibility(false);
   };
 
+  // Retrieve the value from Redux state
+  const formDataState = useSelector((state) => state.formData);
+  const checkboxValue = useSelector((state) => state.dataCheckbox);
+
+  // Maintain local state for the input field value
+  const [inputValue, setInputValue] = useState(formDataState[props.id] || "");
+
+  useEffect(() => {
+    // Update the local input value when Redux state changes
+    setInputValue(formDataState[props.id] || "");
+  }, [formDataState, props.id]);
+
   const handleInputValue = (e) => {
-    dispatch(switchValue({ id: `${props.id}` }));
-    dispatch(
-      updateValue({
-        id: props.id,
-        value: e.target.value, // Include e.target.value in the payload
-      })
-    );
+    if (props.type === "checkbox") {
+      dispatch(switchValue({ id: `${props.id}` }));
+      const currentCheckbox = props.id;
+      dispatch(
+        updateValue({
+          id: props.id,
+          /* it's so weird but i need to invert the value for it to be correct in the state */
+          value: !checkboxValue[currentCheckbox],
+        })
+      );
+    } else if (props.type === "radio") {
+      dispatch(updateValue({ id: "baseLégale", value: props.id }));
+    } else {
+      // Update the local state with the new value
+      const newValue = e.target.value;
+      setInputValue(newValue);
+      // Dispatch the new value to Redux
+      dispatch(
+        updateValue({
+          id: props.id,
+          value: newValue,
+        })
+      );
+    }
   };
 
   return (
@@ -66,10 +95,12 @@ const Input = (props) => {
         </div>
       )}
       <input
+        name={props.name}
         type={props.type}
         id={`${props.id}-input`}
         className={`input ${props.type}-input`}
         placeholder={props.placeholder}
+        value={inputValue} // Use the local state for input value
         onChange={(e) => {
           handleInputValue(e);
         }}
