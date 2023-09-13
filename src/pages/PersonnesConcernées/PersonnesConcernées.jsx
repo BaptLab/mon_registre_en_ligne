@@ -28,11 +28,11 @@ const PersonnesConcernées = () => {
               Personnes concernées par le traitement
             </h2>
             {Array.from({ length: PCcategoryCount }).map((_, index) => (
-              <div className="catégorieDePersonnes-global-container ">
+              <div className="catégorieDePersonnes-global-container double-input-global-container">
                 <h3 className="transfer-title inputs-title">
                   Personne concernée {index + 1}
                 </h3>
-                <div className="PCcategory-container global-input-container">
+                <div className="PCcategory-container double-input-container">
                   <Input
                     key={index}
                     label={`Catégorie de personne`}
@@ -49,14 +49,16 @@ const PersonnesConcernées = () => {
                 </div>
               </div>
             ))}
-            <AnotherBtn
-              addAnElement={addaPCcategory}
-              text="Ajouter une catégorie de personnes"
-            />
-            <DeleteBtn
-              deleteAnElement={deleteaPCcategory}
-              text="Supprimer une catégorie de personnes"
-            />
+            <div className="add-and-delete-btn-section">
+              <AnotherBtn
+                addAnElement={addaPCcategory}
+                text="Ajouter une catégorie de personnes"
+              />
+              <DeleteBtn
+                deleteAnElement={deleteaPCcategory}
+                text="Supprimer une catégorie de personnes"
+              />
+            </div>
           </section>
         </div>
       </main>

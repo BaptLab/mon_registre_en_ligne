@@ -1,17 +1,12 @@
 .label-and-tooltip-section {
   display: flex;
   justify-content: space-between;
-  position: relative;
   align-items: center;
-  margin-bottom: 5px;
-}
-
-.input-label {
-  width: 190px;
+  margin-bottom: 10px;
 }
 
 .input {
-  width: 80%;
+  width: 96%;
   border-radius: 20px;
   padding: 10px;
   border: 1px solid rgba(139, 139, 139, 0.781);
@@ -28,21 +23,51 @@
 
 .input-label {
   font-weight: 500;
+  padding-left: 7px;
 }
 
 .input-container svg {
   color: #0076ce;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.input-container svg:hover {
+  color: #0d89e9; /* Green */
+  transition: color 100ms;
 }
 
 .input-container {
   margin-bottom: 30px;
-  width: 250px;
+  width: 330px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
 }
 
 #data-form .label-and-input-section {
-  width: 150px;
+  width: auto;
 }
 
 .form-part {
   margin-bottom: 30px;
+}
+
+.double-input-global-container {
+  width: 100%;
+}
+
+.double-input-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.double-input-container .input-container {
+  width: 190px;
+}
+
+.inputs-title {
+  margin-bottom: 15px;
 }

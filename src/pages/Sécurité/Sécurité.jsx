@@ -32,7 +32,7 @@ const Sécurité = () => {
                 <h3 className="security-title inputs-title">
                   Mesure de sécurité {index + 1}
                 </h3>
-                <div className="security-container global-input-container">
+                <div className="security-container double-input-container">
                   <Input
                     key={index}
                     label={`Type de mesure de sécurité`}
@@ -47,15 +47,17 @@ const Sécurité = () => {
                   />
                 </div>
               </div>
-            ))}
-            <AnotherBtn
-              addAnElement={addSecurityData}
-              text="Ajouter une mesure de sécurité"
-            />
-            <DeleteBtn
-              deleteAnElement={deleteSecurityData}
-              text="Supprimer une mesure de sécurité"
-            />
+            ))}{" "}
+            <div className="add-and-delete-btn-section">
+              <AnotherBtn
+                addAnElement={addSecurityData}
+                text="Ajouter une mesure de sécurité"
+              />
+              <DeleteBtn
+                deleteAnElement={deleteSecurityData}
+                text="Supprimer une mesure de sécurité"
+              />
+            </div>
           </section>
         </div>
       </main>

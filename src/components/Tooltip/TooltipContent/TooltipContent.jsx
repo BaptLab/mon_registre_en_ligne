@@ -1,4 +1,4 @@
-import "./tooltipcontent.css";
+import "./TooltipContent.css";
 
 const TooltipContent = (props) => {
   return (

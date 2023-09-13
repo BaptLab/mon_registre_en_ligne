@@ -39,6 +39,9 @@ main {
   box-shadow: rgba(0, 0, 0, 0.18) 1px 1px 6px;
   background-color: white;
   height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-title {
@@ -52,4 +55,28 @@ main {
 
 .page-subtitle {
   margin-bottom: 30px;
+}
+
+.add-and-delete-btn-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.add-and-delete-btn-section .btn {
+  background-color: #0076ce; /* Green */
+  border: none;
+  color: white;
+  padding: 7px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-and-delete-btn-section .btn:hover {
+  background-color: #0d89e9; /* Green */
+  transition: background-color 100ms;
 }

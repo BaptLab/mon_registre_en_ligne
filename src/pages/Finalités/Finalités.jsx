@@ -23,32 +23,36 @@ const Finalités = () => {
       <Header />
       <main>
         <SideNav selected="finalités" />
-        <div id="form-container" className="form">
-          <h2 id="finalités-title" className="page-title">
-            Finalités des données traitées
-          </h2>
-          <div className="finalité-global-container ">
-            <Input
-              label="Finalité principale"
-              placeholder="Gestion de la paie"
-              id="finalitéPrincipale"
-              type="text"
-              tooltipContent={definitions.finalité}
-            />
-            {Array.from({ length: finalitéCount }).map((_, index) => (
+        <div id="form-container">
+          <section id="finalité-form" className="form">
+            <h2 id="finalités-title" className="page-title">
+              Finalités des données traitées
+            </h2>
+            <div className="finalité-global-container ">
               <Input
-                key={index}
-                label={`Sous-finalité ${index + 1}`} // Label it as needed
-                placeholder={`Calcul des rémunérations`} // Placeholder it as needed
-                id={`sousFinalité${index + 1}`} // Unique ID for each input
+                label="Finalité principale"
+                placeholder="Gestion de la paie"
+                id="finalitéPrincipale"
+                type="text"
+                tooltipContent={definitions.finalité}
               />
-            ))}
-          </div>
-          <AnotherBtn addAnElement={addAFinalité} text="Ajouter une sous-finalité" />
-          <DeleteBtn
-            deleteAnElement={deleteAFinalité}
-            text="Supprimer une sous-finalité"
-          />
+              {Array.from({ length: finalitéCount }).map((_, index) => (
+                <Input
+                  key={index}
+                  label={`Sous-finalité ${index + 1}`} // Label it as needed
+                  placeholder={`Calcul des rémunérations`} // Placeholder it as needed
+                  id={`sousFinalité${index + 1}`} // Unique ID for each input
+                />
+              ))}
+            </div>{" "}
+            <div className="add-and-delete-btn-section">
+              <AnotherBtn addAnElement={addAFinalité} text="Ajouter une sous-finalité" />
+              <DeleteBtn
+                deleteAnElement={deleteAFinalité}
+                text="Supprimer une sous-finalité"
+              />
+            </div>
+          </section>
         </div>
       </main>
     </>

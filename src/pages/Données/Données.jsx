@@ -172,8 +172,11 @@ const Données = () => {
                           placeholder={`Numéro de téléphone`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addCivData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteCivData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        {" "}
+                        <AnotherBtn addAnElement={addCivData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteCivData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>
@@ -189,8 +192,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addViePersoData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteViePersoData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addViePersoData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteViePersoData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>
@@ -210,8 +215,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addEcoData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteEcoData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addEcoData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteEcoData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>{" "}
@@ -231,8 +238,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addConnexionData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteConnexionData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addConnexionData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteConnexionData} text="-" />
+                      </div>
                     </>
                   )}{" "}
                 </div>{" "}
@@ -252,8 +261,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addLocalisationData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteLocalisationData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addLocalisationData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteLocalisationData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>
@@ -276,8 +287,10 @@ const Données = () => {
                       {Array.from({ length: ethData }).map((_, index) => (
                         <Input id={`ethData${index + 1}`} key={index} type="text" />
                       ))}
-                      <AnotherBtn addAnElement={addEthData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteEthData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addEthData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteEthData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>
@@ -293,8 +306,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addPoliticData} text="+" />
-                      <DeleteBtn deleteAnElement={deletePoliticData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addPoliticData} text="+" />
+                        <DeleteBtn deleteAnElement={deletePoliticData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>
@@ -310,8 +325,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addReligiousData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteReligiousData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addReligiousData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteReligiousData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>
@@ -327,8 +344,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addSyndicalData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteSyndicalData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addSyndicalData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteSyndicalData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>
@@ -348,8 +367,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addBiometricData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteBiometricData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addBiometricData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteBiometricData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>
@@ -365,8 +386,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addHealthData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteHealthData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addHealthData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteHealthData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>
@@ -386,8 +409,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addSexualData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteSexualData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addSexualData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteSexualData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>
@@ -407,8 +432,10 @@ const Données = () => {
                           placeholder={`Some placeholder`}
                         />
                       ))}
-                      <AnotherBtn addAnElement={addConvictionData} text="+" />
-                      <DeleteBtn deleteAnElement={deleteConvictionData} text="-" />
+                      <div className="add-and-delete-btn-section">
+                        <AnotherBtn addAnElement={addConvictionData} text="+" />
+                        <DeleteBtn deleteAnElement={deleteConvictionData} text="-" />
+                      </div>
                     </>
                   )}
                 </div>

@@ -29,37 +29,35 @@ const Introduction = () => {
       <Header />
       <main>
         <SideNav selected="introduction" />
-        <section
-          id="introduction-form"
-          className="form"
-          /*  style={{ opacity: isContentVisible ? 1 : 0 }} */
-        >
-          <h2 id="introduction-title" className="page-title">
-            Introduction
-          </h2>
-          <Input
-            label="Nom du traitement"
-            placeholder="Fichier client"
-            id="traitmentName"
-            type="text"
-            tooltipContent={data.traitement}
-          />
-          <div className="creation-date-section">
+        <div id="form-container">
+          <section id="introduction-form" className="form">
+            <h2 id="introduction-title" className="page-title">
+              Introduction
+            </h2>
             <Input
-              label="Date de création du traitement"
-              placeholder="01/01/1999"
-              id="traitmentCreationDate"
-              type="Date"
-            />
-            <Input
-              label="Précision(s) sur la date de création du traitement"
-              placeholder="à compter du lancement du logiciel x"
-              id="traitmentCreationDatePrecision"
+              label="Nom du traitement"
+              placeholder="Fichier client"
+              id="traitmentName"
               type="text"
-              tooltipContent={creationDatePrecision}
+              tooltipContent={data.traitement}
             />
-          </div>
-        </section>
+            <div className="creation-date-section">
+              <Input
+                label="Date de création du traitement"
+                placeholder="01/01/1999"
+                id="traitmentCreationDate"
+                type="Date"
+              />
+              <Input
+                label="Précision(s) sur la date de création du traitement"
+                placeholder="à compter du lancement du logiciel x"
+                id="traitmentCreationDatePrecision"
+                type="text"
+                tooltipContent={creationDatePrecision}
+              />
+            </div>
+          </section>
+        </div>
       </main>
     </>
   );
