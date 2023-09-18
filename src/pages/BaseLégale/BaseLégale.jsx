@@ -1,12 +1,9 @@
 import "./baselégale.css";
-import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
-import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
-import { useState } from "react";
-import { useSelector } from "react-redux";
 import Header from "../../layout/header/Header";
 import SideNav from "../../layout/SideNav/SideNav";
 import Input from "../../components/Inputs/Input";
 import defintions from "../../datas/tooltip/definitionsCnil/definitions.json";
+import NavBtn from "../../components/btn/navBtn/NavBtn";
 
 const BaseLégale = () => {
   return (
@@ -64,6 +61,13 @@ const BaseLégale = () => {
               />
             </div>
           </section>
+          <NavBtn
+            previousDirectionText="Destinataires des données"
+            nextDirectionText="Sécurité des données"
+            doubleBtn={true}
+            nextDirection="/Sécurité"
+            previousDirection="/Destinataires"
+          />
         </div>
       </main>
     </>

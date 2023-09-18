@@ -6,7 +6,7 @@ import definitions from "../../datas/tooltip/definitionsCnil/definitions.json";
 import { useState } from "react";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
-
+import NavBtn from "../../components/btn/navBtn/NavBtn";
 const Finalités = () => {
   const [finalitéCount, setFinalitéCount] = useState(1);
 
@@ -53,6 +53,13 @@ const Finalités = () => {
               />
             </div>
           </section>
+          <NavBtn
+            previousDirectionText="Parties prenantes"
+            nextDirectionText="Personnes concernées par le traitement"
+            doubleBtn={true}
+            nextDirection="/PartiePrenantes"
+            previousDirection="/PersonnesConcernées"
+          />
         </div>
       </main>
     </>

@@ -14,6 +14,7 @@ import BaseLégale from "./pages/BaseLégale/BaseLégale";
 import Home from "./pages/Home/Home";
 import { useEffect } from "react";
 import { updateValue } from "./redux/slices/formDataSlice";
+import Recap from "./pages/Recap/Recap";
 
 const App = () => {
   useEffect(() => {
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/Destinataires" element={<Destinataires />} />
           <Route path="/Sécurité" element={<Sécurité />} />
           <Route path="/BaseLégale" element={<BaseLégale />} />
+          <Route path="/Recap" element={<Recap />} />
         </Routes>
       </Router>
     </Provider>

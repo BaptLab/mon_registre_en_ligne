@@ -6,6 +6,8 @@ import definitions from "../../datas/tooltip/definitionsCnil/definitions.json";
 import { useState } from "react";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
+import NavBtn from "../../components/btn/navBtn/NavBtn";
+
 const PersonnesConcernées = () => {
   const [PCcategoryCount, setPCcategoryCount] = useState(1);
 
@@ -37,14 +39,14 @@ const PersonnesConcernées = () => {
                     key={index}
                     label={`Catégorie de personne`}
                     placeholder={`Clients, patients...`}
-                    id={`PCcategory-${index + 1}`}
+                    id={`PCcategory${index + 1}`}
                     tooltipContent={definitions.PC}
                   />
                   <Input
                     key={index}
                     label={`Précisions sur la catégorie de personne`}
                     placeholder={`Clients faisant l'objet d'un dérogation d'ordre médical...`}
-                    id={`PCcategory-precisions-${index + 1}`}
+                    id={`PCcategoryPrecisions${index + 1}`}
                   />
                 </div>
               </div>
@@ -60,6 +62,13 @@ const PersonnesConcernées = () => {
               />
             </div>
           </section>
+          <NavBtn
+            previousDirectionText="Finalités des données traitées"
+            nextDirectionText="Catégories de données traitées"
+            doubleBtn={true}
+            nextDirection="/Données"
+            previousDirection="/Finalités"
+          />
         </div>
       </main>
     </>

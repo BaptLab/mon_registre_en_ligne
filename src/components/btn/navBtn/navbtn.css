@@ -1,0 +1,19 @@
+.nav-btn {
+  width: auto;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.nav-btn-container {
+  display: flex;
+  width: 100%;
+  margin: 50px 0px;
+}
+
+.next-btn-container {
+  justify-content: end;
+}
+
+.double-btn-container {
+  justify-content: space-between;
+}

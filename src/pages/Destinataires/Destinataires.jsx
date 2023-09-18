@@ -7,6 +7,7 @@ import definitions from "../../datas/tooltip/definitionsCnil/definitions.json";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
 import { useSelector } from "react-redux";
+import NavBtn from "../../components/btn/navBtn/NavBtn";
 
 const Destinataires = () => {
   const trasnferCheckboxValue = useSelector((state) => state.dataCheckbox.transferData);
@@ -121,6 +122,13 @@ const Destinataires = () => {
               )}
             </section>
           </div>
+          <NavBtn
+            previousDirectionText="Catégorie de données traitées"
+            nextDirectionText="Base Légale"
+            doubleBtn={true}
+            nextDirection="/BaseLégale"
+            previousDirection="/Données"
+          />
         </div>
       </main>
     </>

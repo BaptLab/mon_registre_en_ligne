@@ -8,7 +8,7 @@ const Home = () => {
       <Header />
       <main>
         <SideNav />
-        <h1>Page d'acceuil</h1>
+        <h1>Page d'accueil</h1>
       </main>
     </>
   );

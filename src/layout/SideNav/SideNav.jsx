@@ -1,7 +1,5 @@
 import "./sidenav.css";
-
 import { useNavigate } from "react-router-dom";
-import "./sidenav.css";
 
 const SideNav = (props) => {
   const navigate = useNavigate();
@@ -92,6 +90,16 @@ const SideNav = (props) => {
           }`}
         >
           Sécurité des données
+        </li>
+        <li
+          onClick={() => {
+            handleRedirection("/Recap");
+          }}
+          className={`section-redirection ${
+            props.selected === "recap" ? "sidenav-selected" : ""
+          }`}
+        >
+          Récapitulatif
         </li>
       </ul>
     </nav>

@@ -6,7 +6,7 @@ import definitions from "../../datas/tooltip/definitionsCnil/definitions.json";
 import { useState } from "react";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
-
+import NavBtn from "../../components/btn/navBtn/NavBtn";
 const Sécurité = () => {
   const [securityCount, setSecurityCount] = useState(1);
 
@@ -59,6 +59,13 @@ const Sécurité = () => {
               />
             </div>
           </section>
+          <NavBtn
+            previousDirectionText="Base légale"
+            nextDirectionText="Récapitulatif"
+            doubleBtn={true}
+            nextDirection="/Recap"
+            previousDirection="/BaseLégale"
+          />
         </div>
       </main>
     </>

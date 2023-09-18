@@ -4,6 +4,7 @@ import "./partieprenantes.css";
 import Input from "../../components/Inputs/Input";
 import data from "../../datas/tooltip/definitionsCnil/definitions.json";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
+import NavBtn from "../../components/btn/navBtn/NavBtn";
 
 const PartiePrenantes = () => {
   return (
@@ -45,6 +46,13 @@ const PartiePrenantes = () => {
               tooltipContent={data["Co-RT"]}
             />
           </section>
+          <NavBtn
+            previousDirectionText="Introduction"
+            nextDirectionText="Finalités des données traitées"
+            doubleBtn={true}
+            nextDirection="/Finalités"
+            previousDirection="/Introduction"
+          />
         </div>
       </main>
     </>

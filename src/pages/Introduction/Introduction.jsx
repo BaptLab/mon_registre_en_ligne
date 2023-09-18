@@ -7,8 +7,7 @@ import Input from "../../components/Inputs/Input";
 
 import "./introduction.css";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
-import { useState } from "react";
+import NavBtn from "../../components/btn/navBtn/NavBtn";
 
 const Introduction = () => {
   /* const [isContentVisible, setContentVisible] = useState(false);
@@ -57,6 +56,10 @@ const Introduction = () => {
               />
             </div>
           </section>
+          <NavBtn
+            nextDirectionText="Parties prenantes"
+            nextDirection="/PartiePrenantes"
+          />
         </div>
       </main>
     </>

@@ -4,10 +4,9 @@ import SideNav from "../../layout/SideNav/SideNav";
 import Input from "../../components/Inputs/Input";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
-import definitions from "../../datas/tooltip/definitionsCnil/definitions.json";
-import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import NavBtn from "../../components/btn/navBtn/NavBtn";
 
 const Données = () => {
   const checkboxValues = useSelector((state) => state.dataCheckbox);
@@ -442,6 +441,13 @@ const Données = () => {
               </div>
             </section>
           </section>
+          <NavBtn
+            previousDirectionText="Personnes concernées par le traitement"
+            nextDirectionText="Destinataire des données"
+            doubleBtn={true}
+            nextDirection="/Destinataires"
+            previousDirection="/PersonnesConcernées"
+          />
         </div>
       </main>
     </>
