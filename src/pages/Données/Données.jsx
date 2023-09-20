@@ -7,6 +7,7 @@ import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
+import Footer from "../../layout/Footer/Footer";
 
 const Données = () => {
   const checkboxValues = useSelector((state) => state.dataCheckbox);
@@ -450,6 +451,7 @@ const Données = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

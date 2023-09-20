@@ -5,6 +5,7 @@ import Input from "../../components/Inputs/Input";
 import data from "../../datas/tooltip/definitionsCnil/definitions.json";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
+import Footer from "../../layout/Footer/Footer";
 
 const PartiePrenantes = () => {
   return (
@@ -54,6 +55,7 @@ const PartiePrenantes = () => {
             previousDirection="/Introduction"
           />
         </div>
+        <Footer />
       </main>
     </>
   );

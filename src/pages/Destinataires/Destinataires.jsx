@@ -8,6 +8,7 @@ import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
 import { useSelector } from "react-redux";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
+import Footer from "../../layout/Footer/Footer";
 
 const Destinataires = () => {
   const trasnferCheckboxValue = useSelector((state) => state.dataCheckbox.transferData);
@@ -131,6 +132,7 @@ const Destinataires = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

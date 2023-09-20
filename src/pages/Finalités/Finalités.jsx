@@ -7,6 +7,7 @@ import { useState } from "react";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
+import Footer from "../../layout/Footer/Footer";
 const Finalités = () => {
   const [finalitéCount, setFinalitéCount] = useState(1);
 
@@ -62,6 +63,7 @@ const Finalités = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

@@ -1,4 +1,5 @@
 import generatePDF from "../../functions/generatePDF";
+import Footer from "../../layout/Footer/Footer";
 import SideNav from "../../layout/SideNav/SideNav";
 import Header from "../../layout/header/Header";
 import "./recap.css";
@@ -12,15 +13,19 @@ const Recap = () => {
       <Header />
       <main>
         <SideNav selected="recap" />
-        <button
-          className="btn"
-          onClick={() => {
-            generatePDF(formData);
-          }}
-        >
-          Export to PDF
-        </button>
+        <div className="btn-container">
+          <button
+            className="btn"
+            onClick={() => {
+              generatePDF(formData);
+            }}
+          >
+            {" "}
+            Export to PDF
+          </button>
+        </div>
       </main>
+      <Footer />
     </>
   );
 };

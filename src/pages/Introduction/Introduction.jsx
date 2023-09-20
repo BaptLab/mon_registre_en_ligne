@@ -1,5 +1,6 @@
 import SideNav from "../../layout/SideNav/SideNav";
 import Header from "../../layout/header/Header";
+import Footer from "../../layout/Footer/Footer";
 
 import creationDatePrecision from "../../datas/tooltip/autres/creationPrecision.json";
 import data from "../../datas/tooltip/definitionsCnil/definitions.json";
@@ -62,6 +63,7 @@ const Introduction = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

@@ -4,6 +4,7 @@ import SideNav from "../../layout/SideNav/SideNav";
 import Input from "../../components/Inputs/Input";
 import defintions from "../../datas/tooltip/definitionsCnil/definitions.json";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
+import Footer from "../../layout/Footer/Footer";
 
 const BaseLégale = () => {
   return (
@@ -70,6 +71,7 @@ const BaseLégale = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };
