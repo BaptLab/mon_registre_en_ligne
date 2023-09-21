@@ -2,6 +2,15 @@
   width: auto;
   margin-right: 100px;
   margin-left: 100px;
+  background-color: white;
+  color: #0076ce;
+  border: 1px solid #0076ce;
+}
+
+.nav-btn:hover {
+  background-color: #0076ce;
+  color: white;
+  transition-duration: 300ms;
 }
 
 .nav-btn-container {
