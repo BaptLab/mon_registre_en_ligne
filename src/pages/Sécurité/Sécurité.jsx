@@ -7,6 +7,7 @@ import { useState } from "react";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
+import Footer from "../../layout/Footer/Footer";
 const Sécurité = () => {
   const [securityCount, setSecurityCount] = useState(1);
 
@@ -35,6 +36,7 @@ const Sécurité = () => {
                 <div className="security-container double-input-container">
                   <Input
                     key={index}
+                    page="securityPageData"
                     label={`Type de mesure de sécurité`}
                     placeholder={`Protection des logiciels, sauvegarde des données, etc.`}
                     id={`security-${index + 1}`}
@@ -42,6 +44,7 @@ const Sécurité = () => {
                   />
                   <Input
                     key={index}
+                    page="securityPageData"
                     label={`Précisions sur le type mesure de sécurité`}
                     id={`security-precisions-${index + 1}`}
                   />
@@ -68,6 +71,7 @@ const Sécurité = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

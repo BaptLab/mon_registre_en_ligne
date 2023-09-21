@@ -11,6 +11,8 @@ import "./input.css";
 import { updateValue } from "../../redux/slices/formDataSlice";
 
 const Input = (props) => {
+  const pageName = props.page;
+  const dataId = props.id;
   const dispatch = useDispatch();
   const [tooltipVisibility, setTooltipVisibility] = useState(false);
 
@@ -27,12 +29,14 @@ const Input = (props) => {
   const checkboxValue = useSelector((state) => state.dataCheckbox);
 
   // Maintain local state for the input field value
-  const [inputValue, setInputValue] = useState(formDataState[props.id] || "");
+  const [inputValue, setInputValue] = useState(
+    formDataState[pageName]?.[dataId]?.value || ""
+  );
 
   useEffect(() => {
     // Update the local input value when Redux state changes
-    setInputValue(formDataState[props.id] || "");
-  }, [formDataState, props.id]);
+    setInputValue(formDataState[pageName][props.id]?.value || "");
+  }, [formDataState, pageName, props.id]);
 
   const handleInputValue = (e) => {
     if (props.type === "checkbox") {
@@ -40,13 +44,21 @@ const Input = (props) => {
       const currentCheckbox = props.id;
       dispatch(
         updateValue({
+          page: pageName, // Pass the current page identifier
           id: props.id,
-          /* it's so weird but i need to invert the value for it to be correct in the state */
           value: !checkboxValue[currentCheckbox],
+          label: props.label,
         })
       );
     } else if (props.type === "radio") {
-      dispatch(updateValue({ id: "baseLégale", value: props.id }));
+      dispatch(
+        updateValue({
+          page: pageName, // Pass the current page identifier
+          id: "baseLégale",
+          value: props.id,
+          label: props.label,
+        })
+      );
     } else {
       // Update the local state with the new value
       const newValue = e.target.value;
@@ -54,8 +66,10 @@ const Input = (props) => {
       // Dispatch the new value to Redux
       dispatch(
         updateValue({
+          page: pageName, // Pass the current page identifier
           id: props.id,
           value: newValue,
+          label: props.label,
         })
       );
     }
@@ -95,6 +109,7 @@ const Input = (props) => {
         </div>
       )}
       <input
+        page={props.page}
         name={props.name}
         type={props.type}
         id={`${props.id}-input`}

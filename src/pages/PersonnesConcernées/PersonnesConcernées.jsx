@@ -7,6 +7,7 @@ import { useState } from "react";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
+import Footer from "../../layout/Footer/Footer";
 
 const PersonnesConcernées = () => {
   const [PCcategoryCount, setPCcategoryCount] = useState(1);
@@ -37,6 +38,7 @@ const PersonnesConcernées = () => {
                 <div className="PCcategory-container double-input-container">
                   <Input
                     key={index}
+                    page="personnesConcernéesPageData"
                     label={`Catégorie de personne`}
                     placeholder={`Clients, patients...`}
                     id={`PCcategory${index + 1}`}
@@ -44,6 +46,7 @@ const PersonnesConcernées = () => {
                   />
                   <Input
                     key={index}
+                    page="personnesConcernéesPageData"
                     label={`Précisions sur la catégorie de personne`}
                     placeholder={`Clients faisant l'objet d'un dérogation d'ordre médical...`}
                     id={`PCcategoryPrecisions${index + 1}`}
@@ -71,6 +74,7 @@ const PersonnesConcernées = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

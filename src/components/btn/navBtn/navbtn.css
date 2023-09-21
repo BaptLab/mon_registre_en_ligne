@@ -2,15 +2,16 @@
   width: auto;
   margin-right: 100px;
   margin-left: 100px;
-  background-color: white;
-  color: #0076ce;
-  border: 1px solid #0076ce;
+  background-color: inherit;
+  color: #0d89e9;
+  border: 1px solid #0d89e9;
+  font-weight: bold;
 }
 
 .nav-btn:hover {
-  background-color: #0076ce;
   color: white;
-  transition-duration: 300ms;
+  border: 1px solid #0d89e9;
+  background-color: #0d89e9;
 }
 
 .nav-btn-container {

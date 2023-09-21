@@ -1,5 +1,6 @@
 import SideNav from "../../layout/SideNav/SideNav";
 import Header from "../../layout/header/Header";
+import Footer from "../../layout/Footer/Footer";
 
 import creationDatePrecision from "../../datas/tooltip/autres/creationPrecision.json";
 import data from "../../datas/tooltip/definitionsCnil/definitions.json";
@@ -21,7 +22,6 @@ const Introduction = () => {
  */
 
   const formData = useSelector((state) => state.formData);
-  console.log("formData : ", formData);
 
   return (
     <>
@@ -34,6 +34,7 @@ const Introduction = () => {
               Introduction
             </h2>
             <Input
+              page="introductionPageData"
               label="Nom du traitement"
               placeholder="Fichier client"
               id="traitmentName"
@@ -42,12 +43,14 @@ const Introduction = () => {
             />
             <div className="creation-date-section">
               <Input
+                page="introductionPageData"
                 label="Date de création du traitement"
                 placeholder="01/01/1999"
                 id="traitmentCreationDate"
                 type="Date"
               />
               <Input
+                page="introductionPageData"
                 label="Précision(s) sur la date de création du traitement"
                 placeholder="à compter du lancement du logiciel x"
                 id="traitmentCreationDatePrecision"
@@ -62,6 +65,7 @@ const Introduction = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

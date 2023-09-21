@@ -5,6 +5,7 @@ import Input from "../../components/Inputs/Input";
 import data from "../../datas/tooltip/definitionsCnil/definitions.json";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
+import Footer from "../../layout/Footer/Footer";
 
 const PartiePrenantes = () => {
   return (
@@ -18,6 +19,7 @@ const PartiePrenantes = () => {
               Parties prenantes au traitement
             </h2>
             <Input
+              page="partiePrenantesPageData"
               label="Responsable du traitement"
               placeholder="Jean Dupont (responsable informatique)"
               id="RTName"
@@ -25,6 +27,7 @@ const PartiePrenantes = () => {
               tooltipContent={data.RT}
             />
             <Input
+              page="partiePrenantesPageData"
               label="Délégué à la protection des données personnelles (DPO)"
               placeholder="Jean Dupont (responsable informatique)"
               id="DPOName"
@@ -32,6 +35,7 @@ const PartiePrenantes = () => {
               tooltipContent={data.DPO}
             />
             <Input
+              page="partiePrenantesPageData"
               label="Représentant du responsable du traitement"
               placeholder="Jeanne Smith (responsable juridique)"
               id="RRTName"
@@ -39,6 +43,7 @@ const PartiePrenantes = () => {
               tooltipContent={data.RRT}
             />
             <Input
+              page="partiePrenantesPageData"
               label="Corresponsable de traitement"
               placeholder="Henry Niel (Directeur général de Lesbouchons.com)"
               id="CoRTName"
@@ -55,6 +60,7 @@ const PartiePrenantes = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

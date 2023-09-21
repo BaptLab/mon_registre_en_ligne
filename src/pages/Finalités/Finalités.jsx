@@ -7,6 +7,7 @@ import { useState } from "react";
 import AnotherBtn from "../../components/btn/anotherBtn/AnotherBtn";
 import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
+import Footer from "../../layout/Footer/Footer";
 const Finalités = () => {
   const [finalitéCount, setFinalitéCount] = useState(1);
 
@@ -30,6 +31,7 @@ const Finalités = () => {
             </h2>
             <div className="finalité-global-container ">
               <Input
+                page="finalityPageData"
                 label="Finalité principale"
                 placeholder="Gestion de la paie"
                 id="finalitéPrincipale"
@@ -39,6 +41,7 @@ const Finalités = () => {
               {Array.from({ length: finalitéCount }).map((_, index) => (
                 <Input
                   key={index}
+                  page="finalityPageData"
                   label={`Sous-finalité ${index + 1}`} // Label it as needed
                   placeholder={`Calcul des rémunérations`} // Placeholder it as needed
                   id={`sousFinalité${index + 1}`} // Unique ID for each input
@@ -62,6 +65,7 @@ const Finalités = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

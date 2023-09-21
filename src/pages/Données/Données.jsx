@@ -7,6 +7,7 @@ import DeleteBtn from "../../components/btn/deleteBtn/DeleteBtn";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
+import Footer from "../../layout/Footer/Footer";
 
 const Données = () => {
   const checkboxValues = useSelector((state) => state.dataCheckbox);
@@ -155,7 +156,7 @@ const Données = () => {
                 Données personnelles sensibles
               </h2>
               <div className="data-input-section ">
-                <div className="input-container data-input-container">
+                <div className="global-input-container data-input-container">
                   <Input
                     label="Etat civil, identité, données d'identitifaction, images, etc."
                     id="civData"
@@ -165,8 +166,10 @@ const Données = () => {
                     <>
                       {Array.from({ length: civData }).map((_, index) => (
                         <Input
+                          label={`Donnée d'identité ${index + 1}`}
                           id={`civData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Numéro de téléphone`}
                         />
@@ -179,14 +182,16 @@ const Données = () => {
                     </>
                   )}
                 </div>
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input label="Vie personnelle" id="viePersoData" type="checkbox" />
                   {checkboxValues.viePersoData && (
                     <>
                       {Array.from({ length: viePersoDataCount }).map((_, index) => (
                         <Input
+                          label={`Donnée de vie personnelle ${index + 1}`}
                           id={`viePersoData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -198,7 +203,7 @@ const Données = () => {
                     </>
                   )}
                 </div>
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input
                     label="Informations d'ordre économique et financier"
                     id="ecoData"
@@ -208,8 +213,10 @@ const Données = () => {
                     <>
                       {Array.from({ length: ecoDataCount }).map((_, index) => (
                         <Input
+                          label={`Donnée d'ordre économique ${index + 1}`}
                           id={`ecoData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -221,7 +228,7 @@ const Données = () => {
                     </>
                   )}
                 </div>{" "}
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input
                     label="Données de connexion"
                     id="connexionData"
@@ -231,8 +238,10 @@ const Données = () => {
                     <>
                       {Array.from({ length: connexionDataCount }).map((_, index) => (
                         <Input
+                          label={`Donnée de connexion ${index + 1}`}
                           id={`connexionData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -244,7 +253,7 @@ const Données = () => {
                     </>
                   )}{" "}
                 </div>{" "}
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input
                     label="Données de localisation"
                     id="localisationData"
@@ -254,8 +263,10 @@ const Données = () => {
                     <>
                       {Array.from({ length: localisationDataCount }).map((_, index) => (
                         <Input
+                          label={`Donnée de localisation ${index + 1}`}
                           id={`localisationData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -266,8 +277,16 @@ const Données = () => {
                       </div>
                     </>
                   )}
+                </div>{" "}
+                <div className="global-input-container">
+                  {" "}
+                  <Input
+                    label="Numéro de Sécurité Sociale"
+                    id="NIRData"
+                    type="checkbox"
+                    page="dataPageData"
+                  />
                 </div>
-                <Input label="Numéro de Sécurité Sociale" id="NIRData" type="checkbox" />
               </div>
             </section>
             <section id="sensible-data-form" className="form-part">
@@ -275,7 +294,7 @@ const Données = () => {
                 Données personnelles sensibles
               </h2>
               <div className="data-input-section">
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input
                     label="Données révélant l'origine raciale ou ethnique"
                     id="ethData"
@@ -284,7 +303,13 @@ const Données = () => {
                   {checkboxValues.ethData && (
                     <>
                       {Array.from({ length: ethData }).map((_, index) => (
-                        <Input id={`ethData${index + 1}`} key={index} type="text" />
+                        <Input
+                          label={`Donnée éthnique${index + 1}`}
+                          id={`ethData${index + 1}`}
+                          key={index}
+                          page="dataPageData"
+                          type="text"
+                        />
                       ))}
                       <div className="add-and-delete-btn-section">
                         <AnotherBtn addAnElement={addEthData} text="+" />
@@ -293,14 +318,16 @@ const Données = () => {
                     </>
                   )}
                 </div>
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input label="Données politiques" id="politicData" type="checkbox" />
                   {checkboxValues.politicData && (
                     <>
                       {Array.from({ length: politicData }).map((_, index) => (
                         <Input
+                          label={`Donnée politique ${index + 1}`}
                           id={`politicData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -312,14 +339,16 @@ const Données = () => {
                     </>
                   )}
                 </div>
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input label="Données religieuses" id="religiousData" type="checkbox" />
                   {checkboxValues.religiousData && (
                     <>
                       {Array.from({ length: religiousData }).map((_, index) => (
                         <Input
+                          label={`Donnée religieuse ${index + 1}`}
                           id={`religiousData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -331,14 +360,16 @@ const Données = () => {
                     </>
                   )}
                 </div>
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input label="Données syndicales" id="syndicalData" type="checkbox" />
                   {checkboxValues.syndicalData && (
                     <>
                       {Array.from({ length: syndicalData }).map((_, index) => (
                         <Input
+                          label={`Donnée syndicale ${index + 1}`}
                           id={`syndicalData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -350,7 +381,7 @@ const Données = () => {
                     </>
                   )}
                 </div>
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input
                     label="Données biométriques"
                     id="biometricData"
@@ -360,8 +391,10 @@ const Données = () => {
                     <>
                       {Array.from({ length: biometricData }).map((_, index) => (
                         <Input
+                          label={`Donnée biométrique ${index + 1}`}
                           id={`biometricData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -373,14 +406,16 @@ const Données = () => {
                     </>
                   )}
                 </div>
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input label="Données de santé" id="healthData" type="checkbox" />
                   {checkboxValues.healthData && (
                     <>
                       {Array.from({ length: healthData }).map((_, index) => (
                         <Input
+                          label={`Donnée de santé ${index + 1}`}
                           id={`healthData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -392,7 +427,7 @@ const Données = () => {
                     </>
                   )}
                 </div>
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input
                     label="Données à caractère sexuel"
                     id="sexualData"
@@ -402,8 +437,10 @@ const Données = () => {
                     <>
                       {Array.from({ length: sexualData }).map((_, index) => (
                         <Input
+                          label={`Donnée à caractère sexuel ${index + 1}`}
                           id={`sexualData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -415,7 +452,7 @@ const Données = () => {
                     </>
                   )}
                 </div>
-                <div className="input-container" data->
+                <div className="global-input-container" data->
                   <Input
                     label="Données de condamnation pénale"
                     id="convictionData"
@@ -425,8 +462,10 @@ const Données = () => {
                     <>
                       {Array.from({ length: convictionData }).map((_, index) => (
                         <Input
+                          label={`Donnée relative à une condamnation pénale ${index + 1}`}
                           id={`convictionData${index + 1}`}
                           key={index}
+                          page="dataPageData"
                           type="text"
                           placeholder={`Some placeholder`}
                         />
@@ -450,6 +489,7 @@ const Données = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };
