@@ -1,28 +1,27 @@
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
-function generatePDF(formData, categories) {
+function generatePDF(formData) {
   const doc = new jsPDF();
 
   // Initialize an array to store the formatted data
   const formattedData = [];
 
-  // Loop through each category label in the 'categories' array
-  categories.forEach((categoryLabel) => {
-    // Add a row for the category name
-    formattedData.push([categoryLabel]);
+  // Loop through each category in the formData object
+  for (const categoryLabel in formData) {
+    if (formData.hasOwnProperty(categoryLabel)) {
+      // Loop through each field in the category
+      for (const field in formData[categoryLabel]) {
+        if (formData[categoryLabel].hasOwnProperty(field)) {
+          const label = formData[categoryLabel][field].label; // Use label as the Label
+          const value = formData[categoryLabel][field].value;
 
-    // Loop through each field in the category
-    for (const field in formData[categoryLabel]) {
-      if (formData[categoryLabel].hasOwnProperty(field)) {
-        const label = formData[categoryLabel][field].label; // Use label as the Label
-        const value = formData[categoryLabel][field].value;
-
-        // Push the Label and Value as a sub-array
-        formattedData.push([label, value]);
+          // Push the Label and Value as a sub-array
+          formattedData.push([label, value]);
+        }
       }
     }
-  });
+  }
 
   // Set table column headers
   const headers = ["Label", "Value"];

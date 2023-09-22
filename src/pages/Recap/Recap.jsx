@@ -74,7 +74,7 @@ const Recap = () => {
             <button
               className="btn"
               onClick={() => {
-                generatePDF(formData);
+                generatePDF(formData, sections);
               }}
             >
               Export to PDF
