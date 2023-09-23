@@ -2,6 +2,7 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 
 function generatePDF(formData, categories) {
+  console.log(formData);
   const doc = new jsPDF();
 
   // Initialize an array to store the formatted data

@@ -3,37 +3,23 @@ import generatePDF from "../../functions/generatePDF";
 import Footer from "../../layout/Footer/Footer";
 import SideNav from "../../layout/SideNav/SideNav";
 import Header from "../../layout/header/Header";
-import "./recap.css";
 import { useSelector } from "react-redux";
 
 const Recap = () => {
   const formData = useSelector((state) => state.formData);
 
-  // Create an array of section labels and their corresponding data keys
-  const sections = [
-    { label: "Introduction", key: "introductionPageData" },
-    { label: "Parties prenantes", key: "partiePrenantesPageData" },
-    { label: "Finalités des données traitées", key: "finalityPageData" },
-    {
-      label: "Personnes concernées par le traitement",
-      key: "personnesConcernéesPageData",
-    },
-    { label: "Catégories de données traitées", key: "dataPageData" },
-    { label: "Destinataires des données", key: "destinatairePageData" },
-    { label: "Base légale", key: "baseLégalePageData" },
-    { label: "Sécurité des données", key: "securityPageData" },
-  ];
-
-  const sectionLabels = sections.map((section) => section.label);
-
-  // Create a reusable function to render a section of the table
-  const renderSection = (section) => (
-    <>
-      <tr>
-        <th colSpan="2">{section.label}</th>
+  // Create a function to render a section of the table
+  const renderSection = (section) => {
+    const rows = [];
+    rows.push(
+      <tr key={`header-${section.name}`}>
+        <th colSpan="2">{section.name}</th>
       </tr>
-      {formData[section.key] &&
-        Object.entries(formData[section.key]).map(([key, value]) => (
+    );
+
+    if (formData[section.key]) {
+      Object.entries(formData[section.key].data).forEach(([key, value]) => {
+        rows.push(
           <tr key={key}>
             <td>{value.label}</td>
             <td>
@@ -44,9 +30,17 @@ const Recap = () => {
                 : value.value}
             </td>
           </tr>
-        ))}
-    </>
-  );
+        );
+      });
+    }
+
+    return rows;
+  };
+
+  const sectionsToRender = Object.entries(formData).map(([key, section]) => ({
+    name: section.name,
+    key,
+  }));
 
   return (
     <>
@@ -62,11 +56,11 @@ const Recap = () => {
             <span id="recap-subtitle" className="page-subtitle">
               Vous retrouverez ici un récapitulatif de l'ensemble des champs que vous avez
               renseigné. <br />
-              Veillez à bien vérifier que chaque champ à été rempli correctement avant
+              Veillez à bien vérifier que chaque champ a été rempli correctement avant
               d'effectuer l'exportation de la fiche de traitement.
             </span>
             <table border="1">
-              <tbody>{sections.map((section) => renderSection(section))}</tbody>
+              <tbody>{sectionsToRender.map((section) => renderSection(section))}</tbody>
             </table>
           </section>
 

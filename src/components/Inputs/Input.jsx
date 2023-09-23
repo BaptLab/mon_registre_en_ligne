@@ -28,15 +28,14 @@ const Input = (props) => {
   const formDataState = useSelector((state) => state.formData);
   const checkboxValue = useSelector((state) => state.dataCheckbox);
 
+  console.log(formDataState[pageName]);
   // Maintain local state for the input field value
-  const [inputValue, setInputValue] = useState(
-    formDataState[pageName]?.[dataId]?.value || ""
-  );
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     // Update the local input value when Redux state changes
-    setInputValue(formDataState[pageName][props.id]?.value || "");
-  }, [formDataState, pageName, props.id]);
+    setInputValue(formDataState[pageName]?.data[dataId]?.value || "");
+  }, [formDataState, pageName, dataId]);
 
   const handleInputValue = (e) => {
     if (props.type === "checkbox") {
