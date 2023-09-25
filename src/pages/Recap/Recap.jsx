@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 const Recap = () => {
   const formData = useSelector((state) => state.formData);
-
+  console.log(formData);
   // Create an array of section labels and their corresponding data keys
   const sections = [
     { label: "Introduction", key: "introductionPageData" },
