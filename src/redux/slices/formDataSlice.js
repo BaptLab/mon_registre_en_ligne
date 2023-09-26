@@ -1,71 +1,109 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // Define pageData with meaningful names and initial data
-const pageData = {
-  introductionPageData: {
+const formData = [
+  {
     name: "Introduction",
+    page: "introductionPageData",
     data: {},
   },
-  destinatairePageData: {
+  {
     name: "Destinataire des données",
+    page: "destinatairePageData",
     data: {},
   },
-  dataPageData: {
+  {
     name: "Catégories de données traitées",
+    page: "dataPageData",
     data: {},
   },
-  finalityPageData: {
+  {
     name: "Finalités des données traitées",
+    page: "finalityPageData",
     data: {},
   },
-  partiePrenantesPageData: {
-    name: "Parties prenantes",
+  {
+    name: "Parties prenantes au traitement",
+    page: "partiePrenantesPageData",
     data: {},
   },
-  personnesConcernéesPageData: {
+  {
     name: "Personnes concernées par le traitement",
+    page: "personnesConcernéesPageData",
     data: {},
   },
-  baseLégalePageData: {
+  {
     name: "Base Légale",
+    page: "baseLégalePageData",
     data: {},
   },
-  securityPageData: {
+  {
     name: "Sécurité des données",
+    page: "securityPageData",
     data: {},
   },
-};
+];
 
-// Helper function to get initial state from localStorage
 function getInitialFormData() {
-  const storedData = localStorage.getItem("traitementFiche");
-  return storedData
-    ? JSON.parse(storedData)
-    : Object.keys(pageData).reduce((acc, page) => {
-        acc[page] = pageData[page].data;
-        return acc;
-      }, {});
+  let storedData = localStorage.getItem("traitementFiche");
+  console.log(storedData);
+  if (!storedData) {
+    // Create the Local Storage entry if it doesn't exist
+    localStorage.setItem("traitementFiche", JSON.stringify([]));
+    return formData;
+  }
+
+  try {
+    const parsedData = JSON.parse(storedData);
+
+    if (!Array.isArray(parsedData)) {
+      console.error("Invalid data format in Local Storage.");
+      localStorage.setItem("traitementFiche", JSON.stringify([]));
+      return formData;
+    }
+
+    const result = [];
+
+    for (const pageData of formData) {
+      const pageKey = pageData.page;
+      const existingData = parsedData.find((data) => data.page === pageKey) || {};
+
+      result.push({
+        name: pageData.name,
+        page: pageKey,
+        data: existingData.data || {},
+      });
+    }
+
+    return result;
+  } catch (error) {
+    console.error("Error parsing Local Storage data:", error);
+    return formData;
+  }
 }
 
 const initialState = getInitialFormData();
 
-export const formDataSlice = createSlice({
+const formDataSlice = createSlice({
   name: "formData",
-  initialState,
+  initialState, // Use the newly created initialState
   reducers: {
     updateValue: (state, action) => {
       const { page, id, value, label } = action.payload;
 
-      // Ensure that the page object exists, create it if it doesn't
-      if (!state[page]) {
-        state[page] = {};
+      // Find the index of the page data in state array
+      const pageIndex = state.findIndex((pageData) => pageData.page === page);
+
+      if (pageIndex !== -1) {
+        // If the page exists in the array, update its data
+        const data = state[pageIndex].data || {};
+        data[id] = { value, label };
+        state[pageIndex].data = data;
+
+        // Save updated formData to Local Storage
+        localStorage.setItem("traitementFiche", JSON.stringify(state));
+      } else {
       }
-
-      // Update the data for the current page
-      state[page][id] = { value, label };
-
-      // Also update the local storage
-      localStorage.setItem("traitementFiche", JSON.stringify(state));
     },
   },
 });
