@@ -22,7 +22,7 @@ const Introduction = () => {
  */
 
   const formData = useSelector((state) => state.formData);
-
+  const optionalFieldsValue = useSelector((state) => state.optionalFields);
   return (
     <>
       <Header />
@@ -36,6 +36,7 @@ const Introduction = () => {
             <Input
               page="introductionPageData"
               label="Nom du traitement"
+              optional={false}
               placeholder="Fichier client"
               id="traitmentName"
               type="text"
@@ -45,6 +46,7 @@ const Introduction = () => {
               <Input
                 page="introductionPageData"
                 label="Date de création du traitement"
+                optional={true}
                 placeholder="01/01/1999"
                 id="traitmentCreationDate"
                 type="Date"
@@ -52,6 +54,7 @@ const Introduction = () => {
               <Input
                 page="introductionPageData"
                 label="Précision(s) sur la date de création du traitement"
+                optional={true}
                 placeholder="à compter du lancement du logiciel x"
                 id="traitmentCreationDatePrecision"
                 type="text"

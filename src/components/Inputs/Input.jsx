@@ -11,6 +11,8 @@ import "./input.css";
 import { updateValue } from "../../redux/slices/formDataSlice";
 
 const Input = (props) => {
+  const optionalFieldsValue = useSelector((state) => state.optionalFields);
+
   const pageName = props.page;
   const dataId = props.id;
   const dispatch = useDispatch();
@@ -81,7 +83,9 @@ const Input = (props) => {
   return (
     <div
       id={`${props.id}-input-container`}
-      className={`input-container ${props.type}-input-container`}
+      className={`input-container ${props.type}-input-container ${
+        props.optional && optionalFieldsValue ? "hide" : "show"
+      } `}
     >
       {/* Conditionally render the label and tooltip section */}
       {props.label && (

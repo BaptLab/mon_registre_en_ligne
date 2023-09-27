@@ -4,13 +4,14 @@ import Footer from "../../layout/Footer/Footer";
 import SideNav from "../../layout/SideNav/SideNav";
 import Header from "../../layout/header/Header";
 import { useSelector } from "react-redux";
+import "./recap.css";
 
 const Recap = () => {
   const formData = useSelector((state) => state.formData);
   console.log(formData);
 
   const dataTable = formData.map((page) => {
-    if (page && page.data) {
+    if (page && page.data && Object.keys(page.data).length > 0) {
       return (
         <tbody key={`page-${page.page}`}>
           <tr>
@@ -20,12 +21,12 @@ const Recap = () => {
             const dataItem = page.data[data];
             return (
               <tr key={`page-${page.page}-${data}`}>
-                <td>{dataItem.label}</td>
-                <td>
+                <td className="recap-row-text recap-label">{dataItem.label}</td>
+                <td className="recap-row-text recap-value">
                   {typeof dataItem.value === "boolean"
                     ? dataItem.value
-                      ? "yes"
-                      : "no"
+                      ? "oui"
+                      : "non"
                     : dataItem.value}
                 </td>
               </tr>
@@ -33,8 +34,19 @@ const Recap = () => {
           })}
         </tbody>
       );
+    } else {
+      // Display a row with a placeholder text when no data is available
+      return (
+        <tbody key={`page-${page.page}`}>
+          <tr>
+            <th colSpan="2">{page.name}</th>
+          </tr>
+          <tr>
+            <td colSpan="2">Aucune donnée renseigné</td>
+          </tr>
+        </tbody>
+      );
     }
-    return null; // Return null for cases where page or page.data is undefined
   });
 
   return (
@@ -55,26 +67,25 @@ const Recap = () => {
               d'effectuer l'exportation de la fiche de traitement.
             </span>
             <table border="1">{dataTable}</table>
+            <div className="btn-container">
+              <button
+                className="btn"
+                onClick={() => {
+                  generatePDF(formData);
+                }}
+              >
+                Export to PDF
+              </button>
+              <button
+                className="btn"
+                onClick={() => {
+                  console.table(formData);
+                }}
+              >
+                Print table
+              </button>
+            </div>
           </section>
-
-          <div className="btn-container">
-            <button
-              className="btn"
-              onClick={() => {
-                generatePDF(formData);
-              }}
-            >
-              Export to PDF
-            </button>
-            <button
-              className="btn"
-              onClick={() => {
-                console.table(formData);
-              }}
-            >
-              Print table
-            </button>
-          </div>
         </div>
       </main>
       <Footer />
