@@ -59,6 +59,12 @@
   width: 100%;
 }
 
+.input-container .optional-star {
+  color: red;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
 .double-input-container {
   display: flex;
   justify-content: space-between;

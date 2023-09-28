@@ -168,6 +168,7 @@ const Données = () => {
                         <Input
                           label={`Donnée d'identité ${index + 1}`}
                           id={`civData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -190,6 +191,7 @@ const Données = () => {
                         <Input
                           label={`Donnée de vie personnelle ${index + 1}`}
                           id={`viePersoData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -215,6 +217,7 @@ const Données = () => {
                         <Input
                           label={`Donnée d'ordre économique ${index + 1}`}
                           id={`ecoData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -240,6 +243,7 @@ const Données = () => {
                         <Input
                           label={`Donnée de connexion ${index + 1}`}
                           id={`connexionData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -265,6 +269,7 @@ const Données = () => {
                         <Input
                           label={`Donnée de localisation ${index + 1}`}
                           id={`localisationData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -306,6 +311,7 @@ const Données = () => {
                         <Input
                           label={`Donnée éthnique${index + 1}`}
                           id={`ethData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -326,6 +332,7 @@ const Données = () => {
                         <Input
                           label={`Donnée politique ${index + 1}`}
                           id={`politicData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -347,6 +354,7 @@ const Données = () => {
                         <Input
                           label={`Donnée religieuse ${index + 1}`}
                           id={`religiousData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -368,6 +376,7 @@ const Données = () => {
                         <Input
                           label={`Donnée syndicale ${index + 1}`}
                           id={`syndicalData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -393,6 +402,7 @@ const Données = () => {
                         <Input
                           label={`Donnée biométrique ${index + 1}`}
                           id={`biometricData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -414,6 +424,7 @@ const Données = () => {
                         <Input
                           label={`Donnée de santé ${index + 1}`}
                           id={`healthData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -439,6 +450,7 @@ const Données = () => {
                         <Input
                           label={`Donnée à caractère sexuel ${index + 1}`}
                           id={`sexualData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"
@@ -464,6 +476,7 @@ const Données = () => {
                         <Input
                           label={`Donnée relative à une condamnation pénale ${index + 1}`}
                           id={`convictionData${index + 1}`}
+                          optional={true}
                           key={index}
                           page="dataPageData"
                           type="text"

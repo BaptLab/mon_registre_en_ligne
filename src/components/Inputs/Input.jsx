@@ -93,13 +93,16 @@ const Input = (props) => {
           id={`${props.id}-label-and-tooltip-section`}
           className="label-and-tooltip-section"
         >
-          <label
-            htmlFor={`${props.id}-input`}
-            id={`${props.id}-label`}
-            className={`input-label ${props.type}-input-label`}
-          >
-            {props.label}
-          </label>
+          <div className="label-container">
+            <label
+              htmlFor={`${props.id}-input`}
+              id={`${props.id}-label`}
+              className={`input-label ${props.type}-input-label`}
+            >
+              {props.label}
+            </label>
+            {!props.optional && <span className="optional-star"> *</span>}
+          </div>
           {props.tooltipContent && (
             <>
               <FontAwesomeIcon
