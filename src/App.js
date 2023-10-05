@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Introduction" element={<Introduction />} />
