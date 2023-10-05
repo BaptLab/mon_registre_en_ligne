@@ -49,10 +49,6 @@ const Home = () => {
               de hiérarchiser les risques au regard du RGPD. Cette étape essentielle vous
               permettra d’en déduire un plan d’action de mise en conformité de vos
               traitements aux règles de protection des données.
-              <br />
-              <br /> La CNIL présente ici les éléments essentiels relatifs au registre et
-              propose également un modèle de base répondant aux conditions posées par le
-              RGPD.
             </p>
           </section>
         </div>
