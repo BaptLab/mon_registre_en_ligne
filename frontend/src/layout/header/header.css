@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 5px 6px;
+  background-color: #0076ce;
+  color: white;
+}
+
+header h1 {
+  cursor: pointer;
+}
+
+.switchFields-btn-container {
+  margin-left: 60px;
+}

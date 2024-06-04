@@ -1,0 +1,99 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(211, 211, 211, 0.158);
+}
+
+main {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+}
+
+#form-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.form {
+  max-width: 900px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 35px 50px;
+  /* opacity: 0;
+  transition: opacity 0.5s ease-out; */
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.18) 1px 1px 6px;
+  background-color: white;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 2em;
+  padding-bottom: 40px;
+}
+
+.global-input-container {
+  display: flex;
+}
+
+.page-subtitle {
+  margin-bottom: 30px;
+}
+
+.btn {
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #0076ce; /* Green */
+  border: none;
+  color: white;
+  padding: 7px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0d89e9; /* Green */
+  transition: background-color 100ms;
+}
+
+.add-and-delete-btn-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}

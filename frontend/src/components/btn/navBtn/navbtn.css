@@ -1,0 +1,29 @@
+.nav-btn {
+  width: auto;
+  margin-right: 100px;
+  margin-left: 100px;
+  background-color: inherit;
+  color: #0d89e9;
+  border: 1px solid #0d89e9;
+  font-weight: bold;
+}
+
+.nav-btn:hover {
+  color: white;
+  border: 1px solid #0d89e9;
+  background-color: #0d89e9;
+}
+
+.nav-btn-container {
+  display: flex;
+  width: 100%;
+  margin: 50px 0px;
+}
+
+.next-btn-container {
+  justify-content: end;
+}
+
+.double-btn-container {
+  justify-content: space-between;
+}
