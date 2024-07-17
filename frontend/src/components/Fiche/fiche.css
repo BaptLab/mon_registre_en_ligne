@@ -1,0 +1,11 @@
+.fiche {
+  gap: 30px;
+  border: 1px solid grey;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.fiche:hover {
+  filter: brightness(110%);
+}

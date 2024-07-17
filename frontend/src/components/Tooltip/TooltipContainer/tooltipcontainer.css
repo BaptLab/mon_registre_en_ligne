@@ -1,0 +1,24 @@
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.tooltip-container {
+  background-color: white;
+  width: 300px;
+  height: auto;
+  position: absolute;
+  padding: 15px 20px;
+  top: 10px;
+  left: 345px;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.18) 1px 1px 6px;
+  z-index: 1;
+}
+
+.double-input-container .tooltip-container {
+  left: 195px;
+}

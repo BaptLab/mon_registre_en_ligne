@@ -1,0 +1,55 @@
+#baseLégale-form .data-input-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 5%;
+}
+
+#baseLégale-form .data-input-section .input-container {
+  width: 26%;
+}
+
+.label-and-input-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#data-form .data-input-section {
+  justify-content: space-between;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8%;
+}
+
+#data-form .data-input-section .global-input-container {
+  text-align: center;
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#data-form .data-input-section .global-input-container .input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+#data-form
+  .data-input-section
+  .global-input-container
+  .hide
+  + .add-and-delete-btn-section {
+  display: none;
+}
+
+#data-form .data-input-section .global-input-container .hide {
+  display: none;
+}
+
+#data-form .label-and-tooltip-section {
+  justify-content: center;
+}

@@ -1,0 +1,32 @@
+#fiche-array-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#fiche-array {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+#fiche-array th,
+#fiche-array td {
+  border: 1px solid grey;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+#fiche-array th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#fiche-array tbody tr {
+  cursor: pointer;
+}
+
+#fiche-array tbody tr:hover {
+  background-color: #f0f0f0;
+}

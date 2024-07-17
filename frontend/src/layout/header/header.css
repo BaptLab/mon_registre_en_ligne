@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 5px 6px;
+  background-color: #0076ce;
+  color: white;
+}
+
+header h1 {
+  cursor: pointer;
+}
+
+#center-header {
+  display: flex;
+}
+.switchFields-btn-container {
+  margin-left: 60px;
+}
+
+#connected {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+#connected-icon {
+  width: 38px;
+  height: auto;
+  filter: invert(1);
+}
