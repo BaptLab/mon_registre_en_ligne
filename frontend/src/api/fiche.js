@@ -22,6 +22,7 @@ export const getAllFiches = async (userId) => {
       );
     }
     const data = await response.json();
+    console.log("getting all fiche : ", data);
     return data;
   } catch (error) {
     console.error("Failed to fetch fiches:", error);
@@ -35,12 +36,12 @@ export const getFicheById = async (userId, ficheId) => {
   try {
     const authToken = getAuthToken();
     const response = await fetch(
-      `${apiUrl}/${apiEndpoint}/${userId}/${ficheId}`,
+      `${apiUrl}/fiche/${userId}/${ficheId}`,
       {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${authToken}`, // Include the authorization header
+          Authorization: `Bearer ${authToken}`,
         },
       }
     );
@@ -60,10 +61,11 @@ export const getFicheById = async (userId, ficheId) => {
 };
 
 export const createFiche = async (userId, ficheObject) => {
+  const authToken = getAuthToken();
+  console.log("getting token : ", authToken);
   try {
-    const authToken = getAuthToken();
     const response = await fetch(
-      `${apiUrl}/user/${userId}/${apiEndpoint}`,
+      `${apiUrl}/${apiEndpoint}/${userId}`,
       {
         method: "POST",
         headers: {

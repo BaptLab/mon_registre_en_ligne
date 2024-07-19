@@ -1,14 +1,18 @@
+import { getAuthToken } from "./apiUtils";
+
 const apiUrl = "http://localhost:8080/api";
 const apiEndpoint = "user";
 
 export const getUserInfos = async (userId) => {
   try {
+    const authToken = getAuthToken();
     const response = await fetch(
       `${apiUrl}/${apiEndpoint}/${userId}`,
       {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${authToken}`,
         },
       }
     );

@@ -1,6 +1,6 @@
 // auth.js
 
-import { setAuthToken } from "./apiUtils";
+import { setAuthToken, setUser } from "./apiUtils";
 
 export const login = async (email, password) => {
   try {
@@ -22,7 +22,6 @@ export const login = async (email, password) => {
     }
 
     const data = await response.json();
-    setAuthToken(data.token); // Set the token after receiving response and parsing JSON
     return data;
   } catch (error) {
     console.error("Failed to login:", error);

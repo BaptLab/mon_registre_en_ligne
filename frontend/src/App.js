@@ -21,6 +21,7 @@ import { updateValue } from "./redux/slices/formDataSlice";
 import Recap from "./pages/Recap/Recap";
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Profile from "./pages/Profile/Profile";
 
 const App = () => {
   useEffect(() => {
@@ -47,6 +48,7 @@ const App = () => {
       <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Profile" element={<Profile />} />
           <Route
             path="/Dashboard"
             element={<Dashboard />}

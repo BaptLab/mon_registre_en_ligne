@@ -3,6 +3,8 @@ import Footer from "../../layout/Footer/Footer";
 import Header from "../../layout/header/Header";
 import "./login.css";
 import { login, register } from "../../api/auth";
+import { setUser } from "../../api/apiUtils";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -15,11 +17,15 @@ const Login = () => {
     setRegisterPasswordConfirmation,
   ] = useState("");
 
+  const navigate = useNavigate();
+
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
-    console.log(event);
     try {
       const data = await login(loginEmail, loginPassword);
+      setUser(data);
+      navigate("/dashboard"); // Navigate to the dashboard
+
       console.log(data); // Handle the response data as needed
     } catch (error) {
       console.error("Login failed:", error);

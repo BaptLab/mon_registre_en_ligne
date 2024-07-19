@@ -30,3 +30,11 @@
 #fiche-array tbody tr:hover {
   background-color: #f0f0f0;
 }
+
+#new-fiche {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  margin-left: 50%;
+}

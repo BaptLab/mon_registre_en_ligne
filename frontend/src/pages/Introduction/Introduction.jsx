@@ -7,7 +7,10 @@ import data from "../../datas/tooltip/definitionsCnil/definitions.json";
 import Input from "../../components/Inputs/Input";
 
 import "./introduction.css";
+import { useEffect } from "react";
+import { updateValue } from "../../redux/slices/formDataSlice";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import NavBtn from "../../components/btn/navBtn/NavBtn";
 
 const Introduction = () => {
@@ -20,9 +23,26 @@ const Introduction = () => {
     }, 300); // Delay in milliseconds
   }, []);
  */
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    const storedData = localStorage.getItem(
+      "traitementFiche"
+    );
+
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      Object.entries(parsedData).forEach(
+        ([inputId, value]) => {
+          dispatch(updateValue({ id: inputId, value }));
+        }
+      );
+    }
+  }, [dispatch]);
   const formData = useSelector((state) => state.formData);
-  const optionalFieldsValue = useSelector((state) => state.optionalFields);
+  const optionalFieldsValue = useSelector(
+    (state) => state.optionalFields
+  );
   return (
     <>
       <Header />
@@ -30,7 +50,10 @@ const Introduction = () => {
         <SideNav selected="introduction" />
         <div id="form-container">
           <section id="introduction-form" className="form">
-            <h2 id="introduction-title" className="page-title">
+            <h2
+              id="introduction-title"
+              className="page-title"
+            >
               Introduction
             </h2>
             <Input

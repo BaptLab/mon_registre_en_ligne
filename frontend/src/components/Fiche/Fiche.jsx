@@ -11,11 +11,9 @@ const Fiche = ({
     <tr>
       <td className="fiche-id">{id}</td>
       <td className="fiche-name">{name}</td>
-      <td className="fiche-author">{author}</td>
       <td className="fiche-creation-date">
         {creationDate}
       </td>
-      <td className="fiche-update-date">{updateDate}</td>
     </tr>
   );
 };

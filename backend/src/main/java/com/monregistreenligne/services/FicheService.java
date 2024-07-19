@@ -2,6 +2,8 @@ package com.monregistreenligne.services;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.monregistreenligne.DTOs.FicheDTO;
 import com.monregistreenligne.models.Fiche;
 import com.monregistreenligne.repositories.FicheRepository;
 
@@ -32,5 +34,34 @@ public class FicheService {
 
     public List<Fiche> findByRegistreId(Long registreId) {
         return ficheRepository.findByRegistreTraitementId(registreId);
+    }
+
+    public FicheDTO findByIdAndUserId(Long id, Long userId) {
+        Optional<Fiche> ficheOptional = ficheRepository.findByIdAndRegistreTraitement_UserId(id, userId);
+        if (ficheOptional.isPresent()) {
+            Fiche fiche = ficheOptional.get();
+            return convertToDto(fiche);
+        } else {
+            return null; // or throw a custom exception if preferred
+        }
+    }
+
+    private FicheDTO convertToDto(Fiche fiche) {
+        FicheDTO ficheDTO = new FicheDTO();
+        ficheDTO.setId(fiche.getId());
+        ficheDTO.setConsentBase(fiche.isConsentBase());
+        ficheDTO.setContractBase(fiche.isContractBase());
+        ficheDTO.setFinalitePrincipale(fiche.getFinalitePrincipale());
+        ficheDTO.setLegalObligationBase(fiche.isLegalObligationBase());
+        ficheDTO.setLegitimateInterestBase(fiche.isLegitimateInterestBase());
+        ficheDTO.setPublicInterestBase(fiche.isPublicInterestBase());
+        ficheDTO.setTraitmentCreationDate(fiche.getTraitmentCreationDate());
+        ficheDTO.setTraitmentCreationDatePrecision(fiche.getTraitmentCreationDatePrecision());
+        ficheDTO.setTraitmentName(fiche.getTraitmentName());
+        ficheDTO.setTransferData(fiche.isTransferData());
+        ficheDTO.setVitalSaveBase(fiche.isVitalSaveBase());
+        ficheDTO.setRegistreTraitementId(fiche.getRegistreTraitement().getId());
+        // Map other fields if needed
+        return ficheDTO;
     }
 }

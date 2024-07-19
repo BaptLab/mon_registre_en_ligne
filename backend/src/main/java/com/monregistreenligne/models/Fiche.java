@@ -33,7 +33,7 @@ public class Fiche {
     private String traitmentName;
 
     @Column(nullable = false)
-    private LocalDate traitmentCreationDate;
+    private LocalDate traitmentCreationDate = LocalDate.now(); // Ensure default value
 
     private String traitmentCreationDatePrecision;
 
